@@ -71,79 +71,104 @@ Write-Host "Dang quet thu muc Test_Web..." -ForegroundColor Cyan
 $folders = Get-ChildItem -Path $TestWebDir -Directory | Where-Object { $_.Name -match '^\d{8}_[Dd]e_\d{1,2}_' }
 
 foreach ($folder in $folders) {
-    # Tim file *_Unified*.html trong 03_Outputs
+    # Kiem tra thu muc 03_Outputs
     $outputDir = Join-Path $folder.FullName "03_Outputs"
     if (-not (Test-Path $outputDir)) { continue }
 
-    $unifiedFiles = Get-ChildItem -Path $outputDir -Filter "*_Unified*.html" -File
-    if ($unifiedFiles.Count -eq 0) { continue }
-
-    # Lay file moi nhat (truong hop co nhieu phien ban v2, v3...)
-    $latestFile = $unifiedFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-
-    # Parse ten thu muc: 20260501_de_11_HKII_05
-    if ($folder.Name -match '^\d{8}_[Dd]e_(\d{1,2})_([A-Za-z]+)_(\d+)') {
+    $isBulk = $false
+    # Parse ten thu muc
+    if ($folder.Name -match '^\d{8}_[Dd]e_(\d{1,2})_([A-Za-z]+)_(\d+)$') {
+        # Kieu 1: 20260501_de_11_HKII_05
         $lop = $Matches[1]
         $dangRaw = $Matches[2].ToUpper()
         $soDe = $Matches[3]
+        $isBulk = $false
+    }
+    elseif ($folder.Name -match '^\d{8}_[Dd]e_(\d{1,2})_([A-Za-z]+)$') {
+        # Kieu 2 (Bulk): 20260501_De_12_HKII
+        $lop = $Matches[1]
+        $dangRaw = $Matches[2].ToUpper()
+        $isBulk = $true
     }
     else {
         Write-Host " Khong doc duoc ten thu muc: $($folder.Name) -> Bo qua" -ForegroundColor DarkGray
         continue
     }
 
-    # Tao ten file ngan gon cho Kho De Goc
-    $shortName = "${lop}_${dangRaw}_${soDe}.html"
+    # Tim cac file *.html phu hop (De_XX.html hoac *_Unified*.html)
+    $htmlFiles = Get-ChildItem -Path $outputDir -Filter "*.html" -File | Where-Object { $_.Name -match '.*_Unified.*\.html|De_\d+.*\.html' }
+    if ($htmlFiles.Count -eq 0) { continue }
 
-    # Kiem tra: De nay da co trong CSV chua?
-    $alreadyInCsv = $existingFiles -contains $shortName
+    if (-not $isBulk) {
+        # Neu khong phai bulk, chi lay file moi nhat
+        $htmlFiles = @($htmlFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 1)
+    }
 
-    $khoDestPath = Join-Path $KhoDeGoc $shortName
+    foreach ($htmlFile in $htmlFiles) {
+        $currentSoDe = $soDe
+        if ($isBulk) {
+            # Trich xuat so de tu ten file, vi du: De_01.html
+            if ($htmlFile.Name -match 'De_(\d+)') {
+                $currentSoDe = $Matches[1]
+            } else {
+                continue
+            }
+        }
 
-    if ($alreadyInCsv) {
-        # Da co trong CSV -> Kiem tra xem file nguon co moi hon khong
-        if (Test-Path $khoDestPath) {
-            $sourceTime = $latestFile.LastWriteTime
-            $destTime = (Get-Item $khoDestPath).LastWriteTime
-            if ($sourceTime -gt $destTime) {
-                Copy-Item -Path $latestFile.FullName -Destination $khoDestPath -Force
-                Write-Host " CAP NHAT: $shortName (file nguon moi hon)" -ForegroundColor Yellow
+        # Tao ten file ngan gon cho Kho De Goc
+        $shortName = "${lop}_${dangRaw}_${currentSoDe}.html"
+
+        # Kiem tra: De nay da co trong CSV chua?
+        $alreadyInCsv = $existingFiles -contains $shortName
+
+        $khoDestPath = Join-Path $KhoDeGoc $shortName
+
+        if ($alreadyInCsv) {
+            # Da co trong CSV -> Kiem tra xem file nguon co moi hon khong
+            if (Test-Path $khoDestPath) {
+                $sourceTime = $htmlFile.LastWriteTime
+                $destTime = (Get-Item $khoDestPath).LastWriteTime
+                if ($sourceTime -gt $destTime) {
+                    Copy-Item -Path $htmlFile.FullName -Destination $khoDestPath -Force
+                    Write-Host " CAP NHAT: $shortName (file nguon moi hon)" -ForegroundColor Yellow
+                }
+                else {
+                    Write-Host " Da co, khong thay doi: $shortName" -ForegroundColor DarkGray
+                }
             }
             else {
-                Write-Host " Da co, khong thay doi: $shortName" -ForegroundColor DarkGray
+                # File bi mat trong Kho -> Copy lai
+                Copy-Item -Path $htmlFile.FullName -Destination $khoDestPath -Force
+                Write-Host " KHOI PHUC: $shortName (file bi mat trong Kho)" -ForegroundColor Yellow
             }
         }
         else {
-            # File bi mat trong Kho -> Copy lai
-            Copy-Item -Path $latestFile.FullName -Destination $khoDestPath -Force
-            Write-Host " KHOI PHUC: $shortName (file bi mat trong Kho)" -ForegroundColor Yellow
+            # Hoan toan moi -> Copy va them vao CSV
+            Copy-Item -Path $htmlFile.FullName -Destination $khoDestPath -Force
+
+            $maxIdNum++
+            $newId = "de_{0:D2}" -f $maxIdNum
+
+            $dangVal = "hk"
+            if ($dangMap.ContainsKey($dangRaw)) { $dangVal = $dangMap[$dangRaw] }
+
+            $dangDisplay = $dangRaw
+            if ($dangDisplayMap.ContainsKey($dangRaw)) { $dangDisplay = $dangDisplayMap[$dangRaw] }
+
+            # Dem so cau tu file HTML (dem so slide)
+            $htmlRaw = Get-Content $htmlFile.FullName -Raw -Encoding UTF8
+            $slideCount = ([regex]::Matches($htmlRaw, 'class="slide"')).Count
+            # Tru 2 (slide title va slide ket qua)
+            $soCau = [Math]::Max($slideCount - 2, 0)
+
+            # Ghi them dong moi vao CSV (dung dau gach ngang thay vi em-dash de tranh loi encoding)
+            $newLine = "$newId,De $currentSoDe - $dangDisplay,$lop,$dangVal,$soCau,90,$shortName,Hien,"
+            Add-Content -Path $CsvPath -Value $newLine -Encoding UTF8
+            $newEntriesAdded = $true
+            $existingFiles += $shortName
+
+            Write-Host " MOI: $shortName -> $newId (Lop $lop, $dangDisplay, $soCau cau)" -ForegroundColor Green
         }
-    }
-    else {
-        # Hoan toan moi -> Copy va them vao CSV
-        Copy-Item -Path $latestFile.FullName -Destination $khoDestPath -Force
-
-        $maxIdNum++
-        $newId = "de_{0:D2}" -f $maxIdNum
-
-        $dangVal = "hk"
-        if ($dangMap.ContainsKey($dangRaw)) { $dangVal = $dangMap[$dangRaw] }
-
-        $dangDisplay = $dangRaw
-        if ($dangDisplayMap.ContainsKey($dangRaw)) { $dangDisplay = $dangDisplayMap[$dangRaw] }
-
-        # Dem so cau tu file HTML (dem so slide)
-        $htmlRaw = Get-Content $latestFile.FullName -Raw -Encoding UTF8
-        $slideCount = ([regex]::Matches($htmlRaw, 'class="slide"')).Count
-        # Tru 2 (slide title va slide ket qua)
-        $soCau = [Math]::Max($slideCount - 2, 0)
-
-        # Ghi them dong moi vao CSV (dung dau gach ngang thay vi em-dash de tranh loi encoding)
-        $newLine = "$newId,De $soDe - $dangDisplay,$lop,$dangVal,$soCau,90,$shortName,Hien,"
-        Add-Content -Path $CsvPath -Value $newLine -Encoding UTF8
-        $newEntriesAdded = $true
-
-        Write-Host " MOI: $shortName -> $newId (Lop $lop, $dangDisplay, $soCau cau)" -ForegroundColor Green
     }
 }
 
