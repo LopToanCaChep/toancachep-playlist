@@ -126,20 +126,21 @@ List_Test_Web/
 
 | ID | Tên đề | Lớp | Dạng | Số câu | Thời gian | Mật khẩu |
 |---|---|---|---|---|---|---|
-| de_01 | Đề 07 — Thi thử THPTQG | 12 | thptqg | 22 | 90' | 🔒 Có |
-| de_02 | Đề 02 — Cuối kỳ II | 12 | hk | 35 | 60' | 🔓 Mở |
-| de_03 | Đề 02 — Học kỳ II | 11 | hk | 30 | 90' | 🔓 Mở |
-| de_04 | Đề 02 — Cuối kỳ II | 12 | hk | 24 | 90' | 🔒 Có |
-| de_05 | Đề 03 — Học kỳ II | 11 | hk | 24 | 90' | 🔒 Có |
-| de_06 | Đề 04 — Học kỳ II | 11 | hk | 24 | 90' | 🔒 Có |
-| de_07 | Đề 05 — Học kỳ II | 11 | hk | 24 | 90' | 🔒 Có |
+| de_01 | Đề 07 - Thi thử THPTQG | 12 | thptqg | 22 | 90' | 🔒 Có |
+| de_03 | Đề 02 - Học kỳ II | 11 | hk | 30 | 90' | 🔓 Mở |
+| de_05 | Đề 03 - Học kỳ II | 11 | hk | 24 | 90' | 🔒 Có |
+| de_06 | Đề 04 - Học kỳ II | 11 | hk | 24 | 90' | 🔒 Có |
+| de_07 | Đề 05 - Học kỳ II | 11 | hk | 24 | 90' | 🔒 Có |
+| de_08 → de_16 | Đề 01 → Đề 10 - Học kỳ II | 12 | hk | 24 | 90' | 🔒 Có |
+
+*(Lưu ý: de_17 (Đề 02 - Cuối kỳ II) đã được ẩn)*
 
 ---
 
 ## 5. QUY TRÌNH VẬN HÀNH CHO TÍ
 
 ### Thêm đề mới
-1. Tạo đề ở `Test_Web` → workflow `/TaoHTML_BaiThi`
+1. Tạo đề ở `Test_Web` → workflow `/TaoHTML_BaiThi` (Hỗ trợ ném nhiều file vào 1 thư mục)
 2. Click đúp `Sync_Len_Web.bat` → Robot tự xử lý → push GitHub
 
 ### Đặt / đổi mật khẩu
@@ -159,7 +160,7 @@ List_Test_Web/
 |---|---|
 | **Nền tảng** | GitHub Pages |
 | **Repo** | `LopToanCaChep/toancachep-playlist` |
-| **URL** | `https://loptcachep.github.io/toancachep-playlist/` |
+| **URL** | `https://loptoancachep.github.io/toancachep-playlist/` |
 | **Nhúng** | Embed trong Ghost CMS qua iframe |
 | **Deploy** | Tự động qua `sync_playlist.ps1` (git push → live) |
 
@@ -167,7 +168,13 @@ List_Test_Web/
 
 ## 7. LỊCH SỬ PHIÊN LÀM VIỆC
 
-### 📌 Phiên 01/05/2026 (15 commits)
+### 📌 Phiên Tối 01/05/2026 (Nâng cấp hệ thống)
+- **Bulk Exams Support**: Nâng cấp Robot `sync_playlist.ps1` bóc tách hàng loạt đề trong 1 thư mục.
+- **Dynamic Number Icons**: Bóc tách số đề (01, 02...) làm icon vuông phong cách iOS thay vì Sigma.
+- **Chuẩn hóa Encoding**: Đồng nhất format `Đề XX - Học kỳ II` không bị lỗi UTF-8 trên PowerShell.
+- **Deploy**: 10 đề Lớp 12 Học kỳ II được gắn mật khẩu, sắp xếp tuyến tính trên giao diện.
+
+### 📌 Phiên Chiều 01/05/2026 (15 commits)
 - UI overhaul: nền trắng, hero xanh/vàng, xóa math-deco
 - Logo integration: `logoleft.png` + `logoright.png` (tối ưu 637→34 KB)
 - Safari Mobile Fix: 3 vòng sửa lỗi popup blocking + scroll conflict + double-tap
