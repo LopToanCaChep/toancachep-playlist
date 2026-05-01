@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngân Hàng Đề Thi — Toán Cá Chép</title>
+<meta name="description" content="Tổng hợp đề thi Toán Cá Chép — Lớp 11, 12, THPTQG. Luyện tập trực tuyến ngay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & ROOT ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --cc-blue:#0040BE;--cc-blue-deep:#003B99;--cc-blue-sky:#1E85EB;--cc-blue-ice:#3C9EEF;
+  --cc-yellow:#F7C800;--cc-orange:#E24500;--cc-orange-mid:#FF7800;
+  --cc-ink:#0A1B3D;--cc-ink-soft:#2A3A5E;--cc-line:#E6EAF2;
+  --cc-paper:#FFFFFF;--cc-paper-warm:#FFFBF0;--cc-cream:#FFF4D6;
+  --font-display:'Unbounded',system-ui,sans-serif;
+  --font-body:'Manrope',-apple-system,sans-serif;
+  --shadow-sm:0 1px 2px rgba(10,27,61,.08);
+  --shadow-md:0 6px 16px rgba(10,27,61,.10);
+  --r-sm:10px;--r-md:14px;--r-lg:20px;--r-pill:999px;
+}
+
+body{
+  background:var(--cc-paper-warm);color:var(--cc-ink);
+  font-family:var(--font-body);font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;min-height:100dvh;
+}
+
+/* ========== PLAYLIST HUB CONTAINER ========== */
+.hub{max-width:720px;margin:0 auto;padding:16px 16px 100px}
+
+/* ========== HEADER ========== */
+.hub-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px}
+.hub-logo{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--cc-blue-deep)}
+.hub-logo span{color:var(--cc-yellow)}
+.hub-mascot{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1));
+  animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ========== HERO ========== */
+.hub-hero{
+  background:linear-gradient(135deg,var(--cc-cream) 0%,var(--cc-paper-warm) 100%);
+  border:1.5px solid var(--cc-line);border-radius:var(--r-lg);
+  padding:28px 24px;margin:12px 0 20px;position:relative;overflow:hidden;
+}
+.hub-hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(22px,5vw,32px);
+  color:var(--cc-blue-deep);line-height:1.15;margin-bottom:6px}
+.hub-hero p{font-size:14px;color:var(--cc-ink-soft);font-weight:500}
+.hub-hero .math-deco{
+  position:absolute;right:16px;bottom:12px;font-size:48px;
+  font-family:var(--font-display);font-weight:200;color:var(--cc-blue-deep);opacity:.07;
+  line-height:1;pointer-events:none;white-space:pre;
+}
+
+/* ========== MATH STRIP ========== */
+.math-strip{display:flex;gap:20px;justify-content:center;padding:8px 0 16px;opacity:.12;
+  font-size:22px;font-weight:600;color:var(--cc-blue-deep);user-select:none;overflow:hidden}
+
+/* ========== FILTER TABS ========== */
+.hub-filters{display:flex;gap:6px;padding:0 0 16px;overflow-x:auto;scrollbar-width:none}
+.hub-filters::-webkit-scrollbar{display:none}
+.filter-tab{
+  font-family:var(--font-body);font-weight:600;font-size:13px;
+  padding:7px 16px;border-radius:var(--r-pill);border:1.5px solid var(--cc-line);
+  background:var(--cc-paper);color:var(--cc-ink-soft);cursor:pointer;
+  transition:all .18s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;
+}
+.filter-tab:hover{border-color:var(--cc-blue-sky);color:var(--cc-blue-deep)}
+.filter-tab.active{
+  background:var(--cc-yellow);color:var(--cc-blue-deep);
+  border-color:var(--cc-yellow);box-shadow:0 2px 0 rgba(10,27,61,.15);
+}
+
+/* ========== EXAM LIST ========== */
+.exam-list{display:flex;flex-direction:column;gap:8px}
+
+.exam-row{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;background:var(--cc-paper);
+  border:1.5px solid var(--cc-line);border-radius:var(--r-md);
+  cursor:pointer;transition:all .2s ease;position:relative;
+}
+.exam-row:hover{
+  border-color:var(--cc-blue-sky);background:var(--cc-cream);
+  transform:translateY(-2px);box-shadow:var(--shadow-md);
+}
+.exam-row:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+
+.exam-icon{
+  width:42px;height:42px;border-radius:var(--r-sm);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:700;
+  background:var(--cc-cream);color:var(--cc-blue-deep);
+}
+.exam-icon.orange{background:#FFF0E6;color:var(--cc-orange)}
+.exam-icon.blue{background:#E8F4FD;color:var(--cc-blue-sky)}
+
+.exam-info{flex:1;min-width:0}
+.exam-title{font-weight:700;font-size:15px;color:var(--cc-ink);line-height:1.3;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.exam-meta{font-size:12px;color:var(--cc-ink-soft);margin-top:2px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.exam-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:var(--r-pill);display:inline-block}
+.exam-tag.t12{background:#E8F4FD;color:var(--cc-blue)}
+.exam-tag.t11{background:#E6F9EE;color:#1B7A3D}
+.exam-tag.tqg{background:#FFF0E6;color:var(--cc-orange)}
+
+.exam-arrow{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--cc-yellow);color:var(--cc-blue-deep);
+  font-size:16px;font-weight:700;
+  transition:transform .18s ease;
+}
+.exam-row:hover .exam-arrow{transform:translateX(3px)}
+
+/* ========== EXAM VIEWER (iframe sandbox) ========== */
+.exam-viewer{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:var(--cc-paper);flex-direction:column;
+}
+.exam-viewer.open{display:flex}
+.viewer-bar{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:var(--cc-blue-deep);color:#fff;
+  font-family:var(--font-display);font-size:14px;font-weight:600;
+  flex-shrink:0;min-height:56px;
+  position:relative;z-index:2;
+}
+.viewer-bar .viewer-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#btnBack,#btnClose{
+  background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.3);color:#fff;
+  padding:10px 20px;border-radius:var(--r-pill);font-family:var(--font-body);
+  font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;
+  -webkit-tap-highlight-color:rgba(255,255,255,.3);
+  min-height:40px;touch-action:manipulation;flex-shrink:0;
+}
+#btnClose{padding:10px 14px;font-size:18px;border-radius:50%;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center}
+#btnBack:hover,#btnClose:hover{background:rgba(255,255,255,.35);transform:scale(1.05)}
+#btnBack:active,#btnClose:active{transform:scale(0.95)}
+.viewer-iframe{flex:1;border:none;width:100%;background:#fff}
+
+/* ========== LOADING OVERLAY ========== */
+.loader-overlay{
+  position:fixed;inset:0;z-index:1001;
+  display:none;align-items:center;justify-content:center;
+  background:rgba(255,251,240,.92);backdrop-filter:blur(8px);
+}
+.loader-overlay.show{display:flex}
+.loader-content{text-align:center}
+.loader-fish{font-size:48px;animation:bounce .6s ease-in-out infinite alternate}
+@keyframes bounce{from{transform:translateY(0) rotate(-5deg)}to{transform:translateY(-12px) rotate(5deg)}}
+.loader-text{font-family:var(--font-display);font-weight:600;font-size:14px;
+  color:var(--cc-blue-deep);margin-top:12px}
+
+/* ========== EMPTY STATE ========== */
+.empty-state{text-align:center;padding:40px 20px;color:var(--cc-ink-soft)}
+.empty-state .icon{font-size:48px;margin-bottom:12px}
+.empty-state p{font-size:14px}
+
+/* ========== PASSWORD MODAL ========== */
+.pwd-overlay{
+  position:fixed;inset:0;z-index:1005;
+  display:none;align-items:center;justify-content:center;
+  background:rgba(10,27,61,.5);backdrop-filter:blur(4px);
+}
+.pwd-overlay.show{display:flex}
+.pwd-modal{
+  background:var(--cc-paper);border-radius:var(--r-lg);
+  padding:24px;width:90%;max-width:360px;
+  box-shadow:var(--shadow-md);text-align:center;
+  border:2px solid var(--cc-line);
+}
+.pwd-title{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--cc-blue-deep);margin-bottom:8px}
+.pwd-desc{font-size:14px;color:var(--cc-ink-soft);margin-bottom:20px}
+.pwd-input{
+  width:100%;padding:12px 16px;border:2px solid var(--cc-line);
+  border-radius:var(--r-md);font-family:var(--font-body);font-size:16px;
+  outline:none;transition:border-color .2s;text-align:center;
+  margin-bottom:12px;
+}
+.pwd-input:focus{border-color:var(--cc-blue-sky)}
+.pwd-error{color:var(--cc-orange);font-size:13px;font-weight:600;margin-bottom:16px;display:none;animation:shake .3s}
+.pwd-submit{
+  width:100%;padding:12px;background:var(--cc-yellow);
+  color:var(--cc-blue-deep);border:none;border-radius:var(--r-md);
+  font-family:var(--font-display);font-weight:700;font-size:14px;
+  cursor:pointer;transition:transform .15s;
+}
+.pwd-submit:active{transform:scale(0.97)}
+.pwd-close{
+  background:none;border:none;color:var(--cc-ink-soft);
+  font-size:13px;font-weight:600;margin-top:16px;cursor:pointer;text-decoration:underline;
+}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ========== FOOTER ========== */
+.hub-footer{text-align:center;padding:24px 0 8px;font-size:12px;color:var(--cc-ink-soft);opacity:.6}
+
+/* ========== RESPONSIVE ========== */
+@media(min-width:640px){
+  .hub{padding:24px 32px 80px}
+  .exam-list{gap:10px}
+  .exam-row{padding:16px 20px}
+  .hub-hero{padding:36px 32px}
+}
+@media(min-width:900px){
+  .hub{max-width:840px}
+  .exam-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== PASSWORD MODAL ===== -->
+<div class="pwd-overlay" id="pwdOverlay">
+  <div class="pwd-modal">
+    <div class="pwd-title">Đề thi có mật khẩu</div>
+    <div class="pwd-desc">Vui lòng nhập mật khẩu để tiếp tục</div>
+    <input type="password" class="pwd-input" id="pwdInput" placeholder="Nhập mật khẩu..." autocomplete="off">
+    <div class="pwd-error" id="pwdError">Sai mật khẩu! Vui lòng thử lại.</div>
+    <button class="pwd-submit" id="btnPwdSubmit">MỞ ĐỀ THI</button>
+    <button class="pwd-close" onclick="closePwdModal()">Hủy bỏ</button>
+  </div>
+</div>
+
+<!-- ===== LOADING OVERLAY ===== -->
+<div class="loader-overlay" id="loader">
+  <div class="loader-content">
+    <div class="loader-fish">🐟</div>
+    <div class="loader-text">Đang tải đề thi...</div>
+  </div>
+</div>
+
+<!-- ===== EXAM VIEWER (fullscreen iframe) ===== -->
+<div class="exam-viewer" id="examViewer">
+  <div class="viewer-bar">
+    <button id="btnBack">← Quay lại</button>
+    <span class="viewer-title" id="viewerTitle">Đề thi</span>
+    <button id="btnClose">✕</button>
+  </div>
+  <iframe class="viewer-iframe" id="examFrame"></iframe>
+</div>
+
+<!-- ===== MAIN HUB ===== -->
+<div class="hub">
+
+  <!-- Header -->
+  <header class="hub-header">
+    <div class="hub-logo">Cá <span>Chép</span></div>
+    <img class="hub-mascot" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='70' font-size='70'>🐟</text></svg>" alt="Cá Chép mascot">
+  </header>
+
+  <!-- Hero -->
+  <section class="hub-hero">
+    <h1 id="heroTitle">Ngân hàng đề thi</h1>
+    <p>Toán Cá Chép · Năm học 2025–2026</p>
+    <div class="math-deco">∫ Σ π √x</div>
+  </section>
+
+  <!-- Math strip -->
+  <div class="math-strip" aria-hidden="true">
+    <span>y = ax² + bx + c</span>
+    <span>∫₀¹ f(x)dx</span>
+    <span>sin²α + cos²α = 1</span>
+    <span>Σ aₙ</span>
+    <span>lim(x→∞)</span>
+  </div>
+
+  <!-- Filters -->
+  <div class="hub-filters" id="filters">
+    <button class="filter-tab active" data-filter="all">Tất cả</button>
+    <button class="filter-tab" data-filter="11">Lớp 11</button>
+    <button class="filter-tab" data-filter="12">Lớp 12</button>
+    <button class="filter-tab" data-filter="thptqg">THPTQG</button>
+  </div>
+
+  <!-- Exam List -->
+  <div class="exam-list" id="examList"></div>
+
+  <!-- Footer -->
+  <footer class="hub-footer">Cá Chép © 2026 · Toán vui, điểm thật</footer>
+</div>
+
+<script>
+/* ========== EXAM CONFIG ========== */
+const EXAMS = [
+  {
+    id: 'de_01',
+    file: null,
+    hasPassword: true,
+    title: 'Đề 07 — Thi thử THPTQG',
+    grade: '12',
+    type: 'thptqg',
+    questions: 22,
+    duration: 90,
+    icon: '∫',
+    iconStyle: ''
+  },
+  {
+    id: 'de_02',
+    file: 'de/de_02.html',
+    hasPassword: false,
+    title: 'Đề 02 — Cuối kỳ II',
+    grade: '12',
+    type: 'hk',
+    questions: 35,
+    duration: 60,
+    icon: 'Σ',
+    iconStyle: 'orange'
+  },
+  {
+    id: 'de_03',
+    file: 'de/de_03.html',
+    hasPassword: false,
+    title: 'Đề 02 — Học kỳ II',
+    grade: '11',
+    type: 'hk',
+    questions: 30,
+    duration: 90,
+    icon: 'π',
+    iconStyle: 'blue'
+  }
+];
+
+/* ========== RENDER LIST ========== */
+const listEl = document.getElementById('examList');
+const viewerEl = document.getElementById('examViewer');
+const frameEl = document.getElementById('examFrame');
+const loaderEl = document.getElementById('loader');
+const viewerTitleEl = document.getElementById('viewerTitle');
+
+function renderList(filter = 'all') {
+  const filtered = filter === 'all'
+    ? EXAMS
+    : EXAMS.filter(e => e.grade === filter || e.type === filter);
+
+  if (!filtered.length) {
+    listEl.innerHTML = '<div class="empty-state"><div class="icon">🐟</div><p>Chưa có đề thi nào trong mục này</p></div>';
+    return;
+  }
+
+  listEl.innerHTML = filtered.map(exam => {
+    const gradeTag = exam.grade === '12'
+      ? '<span class="exam-tag t12">Lớp 12</span>'
+      : '<span class="exam-tag t11">Lớp 11</span>';
+    const typeTag = exam.type === 'thptqg'
+      ? '<span class="exam-tag tqg">THPTQG</span>'
+      : '';
+
+    return `
+      <div class="exam-row" onclick="openExam('${exam.id}')" role="button" tabindex="0"
+           data-grade="${exam.grade}" data-type="${exam.type}">
+        <div class="exam-icon ${exam.iconStyle}">${exam.icon}</div>
+        <div class="exam-info">
+          <div class="exam-title">${exam.title}</div>
+          <div class="exam-meta">
+            <span>${exam.questions} câu · ${exam.duration} phút</span>
+            ${gradeTag}${typeTag}
+          </div>
+        </div>
+        <div class="exam-arrow">→</div>
+      </div>`;
+  }).join('');
+}
+
+/* ========== FILTER ========== */
+document.getElementById('filters').addEventListener('click', e => {
+  const tab = e.target.closest('.filter-tab');
+  if (!tab) return;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  renderList(tab.dataset.filter);
+});
+
+/* ========== LAZY-LOAD EXAM & PASSWORD ========== */
+let currentExamId = null;
+const pwdOverlay = document.getElementById('pwdOverlay');
+const pwdInput = document.getElementById('pwdInput');
+const pwdError = document.getElementById('pwdError');
+
+// Hàm mã hóa SHA-256 giống trong PowerShell
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function openExam(id) {
+  const exam = EXAMS.find(e => e.id === id);
+  if (!exam) return;
+  currentExamId = id;
+
+  if (exam.hasPassword) {
+    pwdInput.value = '';
+    pwdError.style.display = 'none';
+    pwdOverlay.classList.add('show');
+    setTimeout(() => pwdInput.focus(), 100);
+  } else {
+    loadIframe(exam.file, exam.title);
+  }
+}
+
+function closePwdModal() {
+  pwdOverlay.classList.remove('show');
+  currentExamId = null;
+}
+
+document.getElementById('btnPwdSubmit').addEventListener('click', async () => {
+  const exam = EXAMS.find(e => e.id === currentExamId);
+  const pwd = pwdInput.value.trim();
+  if (!pwd || !exam) return;
+
+  // Tính hash mật khẩu
+  const hash = await sha256(pwd);
+  const guessedFile = `de/de_${hash}.html`;
+
+  // Kiểm tra file có tồn tại không bằng fetch HEAD
+  try {
+    const response = await fetch(guessedFile, { method: 'HEAD' });
+    if (response.ok) {
+      closePwdModal();
+      loadIframe(guessedFile, exam.title);
+    } else {
+      showPwdError(); // Sai mật khẩu (trên Web)
+    }
+  } catch (err) {
+    // Chạy trên máy tính (file://) sẽ bị lỗi chặn fetch (CORS)
+    // Tạm bypass để load thẳng iframe
+    console.warn("Chạy local: Bypass kiểm tra file, load thẳng iframe...");
+    closePwdModal();
+    loadIframe(guessedFile, exam.title);
+  }
+});
+
+function showPwdError() {
+  pwdError.style.display = 'block';
+  pwdInput.value = '';
+  pwdInput.focus();
+}
+
+pwdInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btnPwdSubmit').click();
+  if (e.key === 'Escape') closePwdModal();
+});
+
+function loadIframe(fileUrl, title) {
+  loaderEl.classList.add('show');
+  viewerTitleEl.textContent = title;
+  
+  frameEl.src = fileUrl;
+  frameEl.onload = () => {
+    loaderEl.classList.remove('show');
+    viewerEl.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  frameEl.onerror = () => {
+    loaderEl.classList.remove('show');
+    alert('Không tải được đề thi. Vui lòng thử lại.');
+  };
+}
+
+function closeExam() {
+  viewerEl.classList.remove('open');
+  document.body.style.overflow = '';
+  // Unload iframe to free memory (PROJECT_CONTEXT rule)
+  frameEl.src = 'about:blank';
+}
+
+// Back button & Close button
+document.getElementById('btnBack').addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  closeExam();
+});
+document.getElementById('btnClose').addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  closeExam();
+});
+
+// ESC to close
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && viewerEl.classList.contains('open')) closeExam();
+});
+
+// Keyboard support on rows
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.classList.contains('exam-row')) e.target.click();
+});
+
+/* ========== URL PARAMETER & INIT ========== */
+const urlParams = new URLSearchParams(window.location.search);
+const gradeParam = urlParams.get('grade');
+
+const heroTitleEl = document.getElementById('heroTitle');
+const filtersEl = document.getElementById('filters');
+
+if (gradeParam) {
+  // Ẩn thanh filter nếu có parameter
+  filtersEl.style.display = 'none';
+
+  // Đổi tên tiêu đề Hero theo filter
+  if (gradeParam === '10') heroTitleEl.textContent = 'Đề thi Lớp 10';
+  else if (gradeParam === '11') heroTitleEl.textContent = 'Đề thi Lớp 11';
+  else if (gradeParam === '12') heroTitleEl.textContent = 'Đề thi Lớp 12';
+  else if (gradeParam === 'thptqg') heroTitleEl.textContent = 'Đề thi THPTQG';
+  
+  document.title = heroTitleEl.textContent + ' — Toán Cá Chép';
+  
+  // Render list theo parameter
+  renderList(gradeParam);
+} else {
+  // Render tất cả như bình thường
+  renderList();
+}
+</script>
+</body>
+</html>
+
+
+
+
