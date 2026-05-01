@@ -465,9 +465,16 @@ pwdInput.addEventListener('keydown', e => {
 });
 
 function navigateToExam(fileUrl) {
-  // Dùng window.location thay vì window.open — tránh bị chặn popup trên mobile
-  // Người dùng bấm nút Back trình duyệt để quay lại danh sách
-  window.location.href = fileUrl;
+  // Tạo thẻ <a target="_blank"> rồi click — mở tab mới không bị chặn popup
+  // Giải quyết scroll lẫn lộn khi embed trong Ghost iframe
+  var a = document.createElement('a');
+  a.href = fileUrl;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 // Keyboard support on rows
@@ -503,6 +510,7 @@ if (gradeParam) {
 </script>
 </body>
 </html>
+
 
 
 
