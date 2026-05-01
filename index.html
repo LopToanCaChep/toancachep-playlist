@@ -75,6 +75,7 @@ body{
   padding:14px 16px;background:var(--cc-paper);
   border:1.5px solid var(--cc-line);border-radius:var(--r-md);
   cursor:pointer;transition:all .2s ease;position:relative;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
 }
 .exam-row:hover{
   border-color:var(--cc-blue-deep);background:var(--cc-blue-deep);
@@ -350,7 +351,7 @@ function renderList(filter = 'all') {
       : '';
 
     return `
-      <div class="exam-row" onclick="openExam('${exam.id}')" role="button" tabindex="0"
+      <div class="exam-row" data-exam-id="${exam.id}" role="button" tabindex="0"
            data-grade="${exam.grade}" data-type="${exam.type}">
         <div class="exam-icon ${exam.iconStyle}">${exam.icon}</div>
         <div class="exam-info">
@@ -376,6 +377,7 @@ document.getElementById('filters').addEventListener('click', e => {
 
 /* ========== LAZY-LOAD EXAM & PASSWORD ========== */
 let currentExamId = null;
+let _examBusy = false; // chống double-tap trên mobile
 const pwdOverlay = document.getElementById('pwdOverlay');
 const pwdInput = document.getElementById('pwdInput');
 const pwdError = document.getElementById('pwdError');
@@ -388,7 +390,19 @@ async function sha256(message) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+// Event delegation – thay vì inline onclick, dùng delegate trên listEl
+listEl.addEventListener('click', e => {
+  const row = e.target.closest('.exam-row');
+  if (!row) return;
+  const id = row.dataset.examId;
+  if (id) openExam(id);
+});
+
 function openExam(id) {
+  if (_examBusy) return;       // chống double-tap
+  _examBusy = true;
+  setTimeout(() => { _examBusy = false; }, 600);
+
   const exam = EXAMS.find(e => e.id === id);
   if (!exam) return;
   currentExamId = id;
@@ -399,7 +413,7 @@ function openExam(id) {
     pwdOverlay.classList.add('show');
     setTimeout(() => pwdInput.focus(), 100);
   } else {
-    loadExamFullScreen(exam.file);
+    navigateToExam(exam.file);
   }
 }
 
@@ -407,6 +421,11 @@ function closePwdModal() {
   pwdOverlay.classList.remove('show');
   currentExamId = null;
 }
+
+// Chặn click overlay ngoài modal để đóng
+pwdOverlay.addEventListener('click', e => {
+  if (e.target === pwdOverlay) closePwdModal();
+});
 
 document.getElementById('btnPwdSubmit').addEventListener('click', async () => {
   const exam = EXAMS.find(e => e.id === currentExamId);
@@ -422,16 +441,15 @@ document.getElementById('btnPwdSubmit').addEventListener('click', async () => {
     const response = await fetch(guessedFile, { method: 'HEAD' });
     if (response.ok) {
       closePwdModal();
-      loadExamFullScreen(guessedFile);
+      navigateToExam(guessedFile);
     } else {
-      showPwdError(); // Sai mật khẩu (trên Web)
+      showPwdError();
     }
   } catch (err) {
     // Chạy trên máy tính (file://) sẽ bị lỗi chặn fetch (CORS)
-    // Tạm bypass để load thẳng
     console.warn("Chạy local: Bypass kiểm tra file, load thẳng...");
     closePwdModal();
-    loadExamFullScreen(guessedFile);
+    navigateToExam(guessedFile);
   }
 });
 
@@ -446,10 +464,10 @@ pwdInput.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePwdModal();
 });
 
-function loadExamFullScreen(fileUrl) {
-  // Thay vì mở iframe gò bó, ta điều hướng trang hiện tại sang thẳng link đề thi (tràn viền 100%)
-  // Nếu nhúng trên Ghost, nó sẽ mở full tab, và Tí có thể dùng nút Back của trình duyệt để quay lại
-  window.open(fileUrl, '_blank');
+function navigateToExam(fileUrl) {
+  // Dùng window.location thay vì window.open — tránh bị chặn popup trên mobile
+  // Người dùng bấm nút Back trình duyệt để quay lại danh sách
+  window.location.href = fileUrl;
 }
 
 // Keyboard support on rows
@@ -485,6 +503,7 @@ if (gradeParam) {
 </script>
 </body>
 </html>
+
 
 
 
