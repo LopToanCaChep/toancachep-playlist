@@ -24,7 +24,7 @@
 }
 
 body{
-  background:var(--cc-paper-warm);color:var(--cc-ink);
+  background:#FFFFFF;color:var(--cc-ink);
   font-family:var(--font-body);font-size:16px;line-height:1.55;
   -webkit-font-smoothing:antialiased;min-height:100dvh;
 }
@@ -36,28 +36,21 @@ body{
 .hub-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px}
 .hub-logo{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--cc-blue-deep)}
 .hub-logo span{color:var(--cc-yellow)}
-.hub-mascot{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1));
+.hub-mascot{width:44px;height:44px;object-fit:contain;
   animation:float 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
 /* ========== HERO ========== */
 .hub-hero{
-  background:linear-gradient(135deg,var(--cc-cream) 0%,var(--cc-paper-warm) 100%);
-  border:1.5px solid var(--cc-line);border-radius:var(--r-lg);
+  background:var(--cc-blue-deep);
+  border:none;border-radius:var(--r-lg);
   padding:28px 24px;margin:12px 0 20px;position:relative;overflow:hidden;
 }
 .hub-hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(22px,5vw,32px);
-  color:var(--cc-blue-deep);line-height:1.15;margin-bottom:6px}
-.hub-hero p{font-size:14px;color:var(--cc-ink-soft);font-weight:500}
-.hub-hero .math-deco{
-  position:absolute;right:16px;bottom:12px;font-size:48px;
-  font-family:var(--font-display);font-weight:200;color:var(--cc-blue-deep);opacity:.07;
-  line-height:1;pointer-events:none;white-space:pre;
-}
+  color:var(--cc-yellow);line-height:1.15;margin-bottom:6px}
+.hub-hero p{font-size:14px;color:rgba(255,255,255,.7);font-weight:500}
 
-/* ========== MATH STRIP ========== */
-.math-strip{display:flex;gap:20px;justify-content:center;padding:8px 0 16px;opacity:.12;
-  font-size:22px;font-weight:600;color:var(--cc-blue-deep);user-select:none;overflow:hidden}
+/* (math-strip removed) */
 
 /* ========== FILTER TABS ========== */
 .hub-filters{display:flex;gap:6px;padding:0 0 16px;overflow-x:auto;scrollbar-width:none}
@@ -84,9 +77,12 @@ body{
   cursor:pointer;transition:all .2s ease;position:relative;
 }
 .exam-row:hover{
-  border-color:var(--cc-blue-sky);background:var(--cc-cream);
+  border-color:var(--cc-blue-deep);background:var(--cc-blue-deep);
   transform:translateY(-2px);box-shadow:var(--shadow-md);
 }
+.exam-row:hover .exam-title{color:#fff}
+.exam-row:hover .exam-meta{color:rgba(255,255,255,.7)}
+.exam-row:hover .exam-tag{background:rgba(255,255,255,.2) !important;color:#fff !important}
 .exam-row:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
 
 .exam-icon{
@@ -218,24 +214,14 @@ body{
   <!-- Header -->
   <header class="hub-header">
     <div class="hub-logo">Cá <span>Chép</span></div>
-    <img class="hub-mascot" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='70' font-size='70'>🐟</text></svg>" alt="Cá Chép mascot">
+    <img class="hub-mascot" src="Pic/logo_right.png" alt="Cá Chép logo">
   </header>
 
   <!-- Hero -->
   <section class="hub-hero">
     <h1 id="heroTitle">Ngân hàng đề thi</h1>
     <p>Toán Cá Chép · Năm học 2025–2026</p>
-    <div class="math-deco">∫ Σ π √x</div>
   </section>
-
-  <!-- Math strip -->
-  <div class="math-strip" aria-hidden="true">
-    <span>y = ax² + bx + c</span>
-    <span>∫₀¹ f(x)dx</span>
-    <span>sin²α + cos²α = 1</span>
-    <span>Σ aₙ</span>
-    <span>lim(x→∞)</span>
-  </div>
 
   <!-- Filters -->
   <div class="hub-filters" id="filters">
@@ -499,6 +485,7 @@ if (gradeParam) {
 </script>
 </body>
 </html>
+
 
 
 
