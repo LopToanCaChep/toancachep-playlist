@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $CsvPath = ".\quan_ly_de_thi.csv"
-$SourceBaseDir = "..\Test_Web"
+$SourceBaseDir = ".\01_Kho_De_Goc"
 $DestDeDir = ".\de"
 $HtmlPath = ".\index.html"
 
