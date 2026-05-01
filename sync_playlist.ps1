@@ -55,12 +55,12 @@ $dangMap = @{
     "GK"     = "hk"
 }
 $dangDisplayMap = @{
-    "THPTQG" = "Thi thu THPTQG"
-    "CKII"   = "Cuoi ky II"
-    "CKI"    = "Cuoi ky I"
-    "HKII"   = "Hoc ky II"
-    "HKI"    = "Hoc ky I"
-    "GK"     = "Giua ky"
+    "THPTQG" = "Thi thử THPTQG"
+    "CKII"   = "Cuối kỳ II"
+    "CKI"    = "Cuối kỳ I"
+    "HKII"   = "Học kỳ II"
+    "HKI"    = "Học kỳ I"
+    "GK"     = "Giữa kỳ"
 }
 
 $newEntriesAdded = $false
@@ -161,8 +161,7 @@ foreach ($folder in $folders) {
             # Tru 2 (slide title va slide ket qua)
             $soCau = [Math]::Max($slideCount - 2, 0)
 
-            # Ghi them dong moi vao CSV (dung dau gach ngang thay vi em-dash de tranh loi encoding)
-            $newLine = "$newId,De $currentSoDe - $dangDisplay,$lop,$dangVal,$soCau,90,$shortName,Hien,"
+            $newLine = "$newId,Đề $currentSoDe - $dangDisplay,$lop,$dangVal,$soCau,90,$shortName,Hien,"
             Add-Content -Path $CsvPath -Value $newLine -Encoding UTF8
             $newEntriesAdded = $true
             $existingFiles += $shortName
@@ -244,6 +243,11 @@ foreach ($row in $csvData) {
     elseif ($row.Dang -eq "hk") {
         $icon = [char]0x03A3  # sigma
         $iconStyle = "orange"
+    }
+
+    # Bóc tách số đề để làm icon
+    if ($row.Ten_De -match 'Đề (\d+)') {
+        $icon = $Matches[1]
     }
 
     $jsonObj = @"
