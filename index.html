@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ngân Hàng Đề Thi — Toán Cá Chép</title>
-<meta name="description" content="Tổng hợp đề thi Toán Cá Chép — Lớp 11, 12, THPTQG. Luyện tập trực tuyến ngay.">
+<title>NgÃ¢n HÃ ng Äá» Thi â€” ToÃ¡n CÃ¡ ChÃ©p</title>
+<meta name="description" content="Tá»•ng há»£p Ä‘á» thi ToÃ¡n CÃ¡ ChÃ©p â€” Lá»›p 11, 12, THPTQG. Luyá»‡n táº­p trá»±c tuyáº¿n ngay.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -193,20 +193,20 @@ body{
 <!-- ===== PASSWORD MODAL ===== -->
 <div class="pwd-overlay" id="pwdOverlay">
   <div class="pwd-modal">
-    <div class="pwd-title">Đề thi có mật khẩu</div>
-    <div class="pwd-desc">Vui lòng nhập mật khẩu để tiếp tục</div>
-    <input type="password" class="pwd-input" id="pwdInput" placeholder="Nhập mật khẩu..." autocomplete="off">
-    <div class="pwd-error" id="pwdError">Sai mật khẩu! Vui lòng thử lại.</div>
-    <button class="pwd-submit" id="btnPwdSubmit">MỞ ĐỀ THI</button>
-    <button class="pwd-close" onclick="closePwdModal()">Hủy bỏ</button>
+    <div class="pwd-title">Äá» thi cÃ³ máº­t kháº©u</div>
+    <div class="pwd-desc">Vui lÃ²ng nháº­p máº­t kháº©u Ä‘á»ƒ tiáº¿p tá»¥c</div>
+    <input type="password" class="pwd-input" id="pwdInput" placeholder="Nháº­p máº­t kháº©u..." autocomplete="off">
+    <div class="pwd-error" id="pwdError">Sai máº­t kháº©u! Vui lÃ²ng thá»­ láº¡i.</div>
+    <button class="pwd-submit" id="btnPwdSubmit">Má»ž Äá»€ THI</button>
+    <button class="pwd-close" onclick="closePwdModal()">Há»§y bá»</button>
   </div>
 </div>
 
 <!-- ===== LOADING OVERLAY ===== -->
 <div class="loader-overlay" id="loader">
   <div class="loader-content">
-    <div class="loader-fish">🐟</div>
-    <div class="loader-text">Đang tải đề thi...</div>
+    <div class="loader-fish">ðŸŸ</div>
+    <div class="loader-text">Äang táº£i Ä‘á» thi...</div>
   </div>
 </div>
 
@@ -217,31 +217,31 @@ body{
 
   <!-- Header -->
   <header class="hub-header">
-    <div class="hub-logo">Cá <span>Chép</span></div>
-    <img class="hub-mascot" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='70' font-size='70'>🐟</text></svg>" alt="Cá Chép mascot">
+    <div class="hub-logo">CÃ¡ <span>ChÃ©p</span></div>
+    <img class="hub-mascot" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='70' font-size='70'>ðŸŸ</text></svg>" alt="CÃ¡ ChÃ©p mascot">
   </header>
 
   <!-- Hero -->
   <section class="hub-hero">
-    <h1 id="heroTitle">Ngân hàng đề thi</h1>
-    <p>Toán Cá Chép · Năm học 2025–2026</p>
-    <div class="math-deco">∫ Σ π √x</div>
+    <h1 id="heroTitle">NgÃ¢n hÃ ng Ä‘á» thi</h1>
+    <p>ToÃ¡n CÃ¡ ChÃ©p Â· NÄƒm há»c 2025â€“2026</p>
+    <div class="math-deco">âˆ« Î£ Ï€ âˆšx</div>
   </section>
 
   <!-- Math strip -->
   <div class="math-strip" aria-hidden="true">
-    <span>y = ax² + bx + c</span>
-    <span>∫₀¹ f(x)dx</span>
-    <span>sin²α + cos²α = 1</span>
-    <span>Σ aₙ</span>
-    <span>lim(x→∞)</span>
+    <span>y = axÂ² + bx + c</span>
+    <span>âˆ«â‚€Â¹ f(x)dx</span>
+    <span>sinÂ²Î± + cosÂ²Î± = 1</span>
+    <span>Î£ aâ‚™</span>
+    <span>lim(xâ†’âˆž)</span>
   </div>
 
   <!-- Filters -->
   <div class="hub-filters" id="filters">
-    <button class="filter-tab active" data-filter="all">Tất cả</button>
-    <button class="filter-tab" data-filter="11">Lớp 11</button>
-    <button class="filter-tab" data-filter="12">Lớp 12</button>
+    <button class="filter-tab active" data-filter="all">Táº¥t cáº£</button>
+    <button class="filter-tab" data-filter="11">Lá»›p 11</button>
+    <button class="filter-tab" data-filter="12">Lá»›p 12</button>
     <button class="filter-tab" data-filter="thptqg">THPTQG</button>
   </div>
 
@@ -249,7 +249,7 @@ body{
   <div class="exam-list" id="examList"></div>
 
   <!-- Footer -->
-  <footer class="hub-footer">Cá Chép © 2026 · Toán vui, điểm thật</footer>
+  <footer class="hub-footer">CÃ¡ ChÃ©p Â© 2026 Â· ToÃ¡n vui, Ä‘iá»ƒm tháº­t</footer>
 </div>
 
 <script>
@@ -290,6 +290,54 @@ const EXAMS = [
     duration: 90,
     icon: 'π',
     iconStyle: 'blue'
+  },
+  {
+    id: 'de_04',
+    file: 'de/de_04.html',
+    hasPassword: false,
+    title: 'De 02 - Cuoi ky II',
+    grade: '12',
+    type: 'hk',
+    questions: 24,
+    duration: 90,
+    icon: 'Σ',
+    iconStyle: 'orange'
+  },
+  {
+    id: 'de_05',
+    file: 'de/de_05.html',
+    hasPassword: false,
+    title: 'De 03 - Hoc ky II',
+    grade: '11',
+    type: 'hk',
+    questions: 24,
+    duration: 90,
+    icon: 'π',
+    iconStyle: 'blue'
+  },
+  {
+    id: 'de_06',
+    file: 'de/de_06.html',
+    hasPassword: false,
+    title: 'De 04 - Hoc ky II',
+    grade: '11',
+    type: 'hk',
+    questions: 24,
+    duration: 90,
+    icon: 'π',
+    iconStyle: 'blue'
+  },
+  {
+    id: 'de_07',
+    file: 'de/de_07.html',
+    hasPassword: false,
+    title: 'De 05 - Hoc ky II',
+    grade: '11',
+    type: 'hk',
+    questions: 24,
+    duration: 90,
+    icon: 'π',
+    iconStyle: 'blue'
   }
 ];
 
@@ -303,14 +351,14 @@ function renderList(filter = 'all') {
     : EXAMS.filter(e => e.grade === filter || e.type === filter);
 
   if (!filtered.length) {
-    listEl.innerHTML = '<div class="empty-state"><div class="icon">🐟</div><p>Chưa có đề thi nào trong mục này</p></div>';
+    listEl.innerHTML = '<div class="empty-state"><div class="icon">ðŸŸ</div><p>ChÆ°a cÃ³ Ä‘á» thi nÃ o trong má»¥c nÃ y</p></div>';
     return;
   }
 
   listEl.innerHTML = filtered.map(exam => {
     const gradeTag = exam.grade === '12'
-      ? '<span class="exam-tag t12">Lớp 12</span>'
-      : '<span class="exam-tag t11">Lớp 11</span>';
+      ? '<span class="exam-tag t12">Lá»›p 12</span>'
+      : '<span class="exam-tag t11">Lá»›p 11</span>';
     const typeTag = exam.type === 'thptqg'
       ? '<span class="exam-tag tqg">THPTQG</span>'
       : '';
@@ -322,11 +370,11 @@ function renderList(filter = 'all') {
         <div class="exam-info">
           <div class="exam-title">${exam.title}</div>
           <div class="exam-meta">
-            <span>${exam.questions} câu · ${exam.duration} phút</span>
+            <span>${exam.questions} cÃ¢u Â· ${exam.duration} phÃºt</span>
             ${gradeTag}${typeTag}
           </div>
         </div>
-        <div class="exam-arrow">→</div>
+        <div class="exam-arrow">â†’</div>
       </div>`;
   }).join('');
 }
@@ -346,7 +394,7 @@ const pwdOverlay = document.getElementById('pwdOverlay');
 const pwdInput = document.getElementById('pwdInput');
 const pwdError = document.getElementById('pwdError');
 
-// Hàm mã hóa SHA-256 giống trong PowerShell
+// HÃ m mÃ£ hÃ³a SHA-256 giá»‘ng trong PowerShell
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -379,23 +427,23 @@ document.getElementById('btnPwdSubmit').addEventListener('click', async () => {
   const pwd = pwdInput.value.trim();
   if (!pwd || !exam) return;
 
-  // Tính hash mật khẩu
+  // TÃ­nh hash máº­t kháº©u
   const hash = await sha256(pwd);
   const guessedFile = `de/de_${hash}.html`;
 
-  // Kiểm tra file có tồn tại không bằng fetch HEAD
+  // Kiá»ƒm tra file cÃ³ tá»“n táº¡i khÃ´ng báº±ng fetch HEAD
   try {
     const response = await fetch(guessedFile, { method: 'HEAD' });
     if (response.ok) {
       closePwdModal();
       loadExamFullScreen(guessedFile);
     } else {
-      showPwdError(); // Sai mật khẩu (trên Web)
+      showPwdError(); // Sai máº­t kháº©u (trÃªn Web)
     }
   } catch (err) {
-    // Chạy trên máy tính (file://) sẽ bị lỗi chặn fetch (CORS)
-    // Tạm bypass để load thẳng
-    console.warn("Chạy local: Bypass kiểm tra file, load thẳng...");
+    // Cháº¡y trÃªn mÃ¡y tÃ­nh (file://) sáº½ bá»‹ lá»—i cháº·n fetch (CORS)
+    // Táº¡m bypass Ä‘á»ƒ load tháº³ng
+    console.warn("Cháº¡y local: Bypass kiá»ƒm tra file, load tháº³ng...");
     closePwdModal();
     loadExamFullScreen(guessedFile);
   }
@@ -413,8 +461,8 @@ pwdInput.addEventListener('keydown', e => {
 });
 
 function loadExamFullScreen(fileUrl) {
-  // Thay vì mở iframe gò bó, ta điều hướng trang hiện tại sang thẳng link đề thi (tràn viền 100%)
-  // Nếu nhúng trên Ghost, nó sẽ mở full tab, và Tí có thể dùng nút Back của trình duyệt để quay lại
+  // Thay vÃ¬ má»Ÿ iframe gÃ² bÃ³, ta Ä‘iá»u hÆ°á»›ng trang hiá»‡n táº¡i sang tháº³ng link Ä‘á» thi (trÃ n viá»n 100%)
+  // Náº¿u nhÃºng trÃªn Ghost, nÃ³ sáº½ má»Ÿ full tab, vÃ  TÃ­ cÃ³ thá»ƒ dÃ¹ng nÃºt Back cá»§a trÃ¬nh duyá»‡t Ä‘á»ƒ quay láº¡i
   window.open(fileUrl, '_blank');
 }
 
@@ -431,26 +479,27 @@ const heroTitleEl = document.getElementById('heroTitle');
 const filtersEl = document.getElementById('filters');
 
 if (gradeParam) {
-  // Ẩn thanh filter nếu có parameter
+  // áº¨n thanh filter náº¿u cÃ³ parameter
   filtersEl.style.display = 'none';
 
-  // Đổi tên tiêu đề Hero theo filter
-  if (gradeParam === '10') heroTitleEl.textContent = 'Đề thi Lớp 10';
-  else if (gradeParam === '11') heroTitleEl.textContent = 'Đề thi Lớp 11';
-  else if (gradeParam === '12') heroTitleEl.textContent = 'Đề thi Lớp 12';
-  else if (gradeParam === 'thptqg') heroTitleEl.textContent = 'Đề thi THPTQG';
+  // Äá»•i tÃªn tiÃªu Ä‘á» Hero theo filter
+  if (gradeParam === '10') heroTitleEl.textContent = 'Äá» thi Lá»›p 10';
+  else if (gradeParam === '11') heroTitleEl.textContent = 'Äá» thi Lá»›p 11';
+  else if (gradeParam === '12') heroTitleEl.textContent = 'Äá» thi Lá»›p 12';
+  else if (gradeParam === 'thptqg') heroTitleEl.textContent = 'Äá» thi THPTQG';
   
-  document.title = heroTitleEl.textContent + ' — Toán Cá Chép';
+  document.title = heroTitleEl.textContent + ' â€” ToÃ¡n CÃ¡ ChÃ©p';
   
   // Render list theo parameter
   renderList(gradeParam);
 } else {
-  // Render tất cả như bình thường
+  // Render táº¥t cáº£ nhÆ° bÃ¬nh thÆ°á»ng
   renderList();
 }
 </script>
 </body>
 </html>
+
 
 
 
