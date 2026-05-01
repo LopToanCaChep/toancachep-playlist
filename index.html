@@ -76,6 +76,7 @@ body{
   border:1.5px solid var(--cc-line);border-radius:var(--r-md);
   cursor:pointer;transition:all .2s ease;position:relative;
   touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  text-decoration:none;color:inherit;
 }
 .exam-row:hover{
   border-color:var(--cc-blue-deep);background:var(--cc-blue-deep);
@@ -350,8 +351,16 @@ function renderList(filter = 'all') {
       ? '<span class="exam-tag tqg">THPTQG</span>'
       : '';
 
+    // Đề không mật khẩu: dùng <a> tag thật → Safari KHÔNG BAO GIỜ chặn link thật
+    // Đề có mật khẩu: dùng div, click sẽ mở modal
+    const tag = (!exam.hasPassword && exam.file) ? 'a' : 'div';
+    const hrefAttr = (!exam.hasPassword && exam.file)
+      ? `href="${exam.file}" target="_blank" rel="noopener"`
+      : '';
+
     return `
-      <div class="exam-row" data-exam-id="${exam.id}" role="button" tabindex="0"
+      <${tag} class="exam-row" data-exam-id="${exam.id}" ${hrefAttr}
+           role="button" tabindex="0"
            data-grade="${exam.grade}" data-type="${exam.type}">
         <div class="exam-icon ${exam.iconStyle}">${exam.icon}</div>
         <div class="exam-info">
@@ -362,7 +371,7 @@ function renderList(filter = 'all') {
           </div>
         </div>
         <div class="exam-arrow">→</div>
-      </div>`;
+      </${tag}>`;
   }).join('');
 }
 
@@ -390,32 +399,31 @@ async function sha256(message) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Event delegation – thay vì inline onclick, dùng delegate trên listEl
+// Event delegation – chỉ xử lý click cho đề CÓ MẬT KHẨU
+// Đề không mật khẩu đã dùng <a> tag thật, trình duyệt tự xử lý
 listEl.addEventListener('click', e => {
+  // Nếu là <a> tag (đề không mật khẩu) → để trình duyệt xử lý, không can thiệp
   const row = e.target.closest('.exam-row');
   if (!row) return;
-  const id = row.dataset.examId;
-  if (id) openExam(id);
-});
+  if (row.tagName === 'A') return; // <a> tag tự mở link
 
-function openExam(id) {
-  if (_examBusy) return;       // chống double-tap
+  e.preventDefault();
+  e.stopPropagation();
+
+  if (_examBusy) return;
   _examBusy = true;
-  setTimeout(() => { _examBusy = false; }, 600);
+  setTimeout(() => { _examBusy = false; }, 800);
 
-  const exam = EXAMS.find(e => e.id === id);
-  if (!exam) return;
+  const id = row.dataset.examId;
+  const exam = EXAMS.find(ex => ex.id === id);
+  if (!exam || !exam.hasPassword) return;
+
   currentExamId = id;
-
-  if (exam.hasPassword) {
-    pwdInput.value = '';
-    pwdError.style.display = 'none';
-    pwdOverlay.classList.add('show');
-    setTimeout(() => pwdInput.focus(), 100);
-  } else {
-    navigateToExam(exam.file);
-  }
-}
+  pwdInput.value = '';
+  pwdError.style.display = 'none';
+  pwdOverlay.classList.add('show');
+  setTimeout(() => pwdInput.focus(), 100);
+});
 
 function closePwdModal() {
   pwdOverlay.classList.remove('show');
@@ -432,24 +440,30 @@ document.getElementById('btnPwdSubmit').addEventListener('click', async () => {
   const pwd = pwdInput.value.trim();
   if (!pwd || !exam) return;
 
-  // Tính hash mật khẩu
+  // === SAFARI FIX: Mở tab mới NGAY LẬP TỨC (synchronous, trong user gesture) ===
+  // Sau đó mới tính hash (async). Safari chỉ cho mở tab trong sync context.
+  const newTab = window.open('about:blank', '_blank');
+
+  // Tính hash mật khẩu (async)
   const hash = await sha256(pwd);
   const guessedFile = `de/de_${hash}.html`;
+  const fullUrl = new URL(guessedFile, window.location.href).href;
 
   // Kiểm tra file có tồn tại không bằng fetch HEAD
   try {
     const response = await fetch(guessedFile, { method: 'HEAD' });
     if (response.ok) {
       closePwdModal();
-      navigateToExam(guessedFile);
+      if (newTab && !newTab.closed) newTab.location.href = fullUrl;
     } else {
+      if (newTab && !newTab.closed) newTab.close();
       showPwdError();
     }
   } catch (err) {
-    // Chạy trên máy tính (file://) sẽ bị lỗi chặn fetch (CORS)
-    console.warn("Chạy local: Bypass kiểm tra file, load thẳng...");
+    // Chạy trên máy tính (file://) — bypass
+    console.warn("Chạy local: Bypass...");
     closePwdModal();
-    navigateToExam(guessedFile);
+    if (newTab && !newTab.closed) newTab.location.href = fullUrl;
   }
 });
 
@@ -464,18 +478,8 @@ pwdInput.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePwdModal();
 });
 
-function navigateToExam(fileUrl) {
-  // Tạo thẻ <a target="_blank"> rồi click — mở tab mới không bị chặn popup
-  // Giải quyết scroll lẫn lộn khi embed trong Ghost iframe
-  var a = document.createElement('a');
-  a.href = fileUrl;
-  a.target = '_blank';
-  a.rel = 'noopener';
-  a.style.display = 'none';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
+// navigateToExam đã bỏ — đề thường dùng <a>, đề mật khẩu dùng pre-open tab
+
 
 // Keyboard support on rows
 document.addEventListener('keydown', e => {
@@ -510,6 +514,7 @@ if (gradeParam) {
 </script>
 </body>
 </html>
+
 
 
 
