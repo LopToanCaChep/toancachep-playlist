@@ -246,7 +246,7 @@ foreach ($row in $csvData) {
     }
 
     # Bóc tách số đề để làm icon
-    if ($row.Ten_De -match 'Đề (\d+)') {
+    if ($row.Ten_De -match '(\d{1,2})') {
         $icon = $Matches[1]
     }
 
