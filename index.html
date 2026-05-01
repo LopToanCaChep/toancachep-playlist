@@ -116,32 +116,7 @@ body{
 }
 .exam-row:hover .exam-arrow{transform:translateX(3px)}
 
-/* ========== EXAM VIEWER (iframe sandbox) ========== */
-.exam-viewer{
-  display:none;position:fixed;inset:0;z-index:1000;
-  background:var(--cc-paper);flex-direction:column;
-}
-.exam-viewer.open{display:flex}
-.viewer-bar{
-  display:flex;align-items:center;gap:12px;
-  padding:14px 16px;background:var(--cc-blue-deep);color:#fff;
-  font-family:var(--font-display);font-size:14px;font-weight:600;
-  flex-shrink:0;min-height:56px;
-  position:relative;z-index:2;
-}
-.viewer-bar .viewer-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#btnBack,#btnClose{
-  background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.3);color:#fff;
-  padding:10px 20px;border-radius:var(--r-pill);font-family:var(--font-body);
-  font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;
-  -webkit-tap-highlight-color:rgba(255,255,255,.3);
-  min-height:40px;touch-action:manipulation;flex-shrink:0;
-}
-#btnClose{padding:10px 14px;font-size:18px;border-radius:50%;width:40px;height:40px;
-  display:flex;align-items:center;justify-content:center}
-#btnBack:hover,#btnClose:hover{background:rgba(255,255,255,.35);transform:scale(1.05)}
-#btnBack:active,#btnClose:active{transform:scale(0.95)}
-.viewer-iframe{flex:1;border:none;width:100%;background:#fff}
+/* ========== EXAM VIEWER REMOVED (NOW OPENS FULLSCREEN) ========== */
 
 /* ========== LOADING OVERLAY ========== */
 .loader-overlay{
@@ -235,15 +210,7 @@ body{
   </div>
 </div>
 
-<!-- ===== EXAM VIEWER (fullscreen iframe) ===== -->
-<div class="exam-viewer" id="examViewer">
-  <div class="viewer-bar">
-    <button id="btnBack">← Quay lại</button>
-    <span class="viewer-title" id="viewerTitle">Đề thi</span>
-    <button id="btnClose">✕</button>
-  </div>
-  <iframe class="viewer-iframe" id="examFrame"></iframe>
-</div>
+<!-- (Exam viewer has been moved to open in full tab) -->
 
 <!-- ===== MAIN HUB ===== -->
 <div class="hub">
@@ -328,10 +295,7 @@ const EXAMS = [
 
 /* ========== RENDER LIST ========== */
 const listEl = document.getElementById('examList');
-const viewerEl = document.getElementById('examViewer');
-const frameEl = document.getElementById('examFrame');
 const loaderEl = document.getElementById('loader');
-const viewerTitleEl = document.getElementById('viewerTitle');
 
 function renderList(filter = 'all') {
   const filtered = filter === 'all'
@@ -401,7 +365,7 @@ function openExam(id) {
     pwdOverlay.classList.add('show');
     setTimeout(() => pwdInput.focus(), 100);
   } else {
-    loadIframe(exam.file, exam.title);
+    loadExamFullScreen(exam.file);
   }
 }
 
@@ -424,16 +388,16 @@ document.getElementById('btnPwdSubmit').addEventListener('click', async () => {
     const response = await fetch(guessedFile, { method: 'HEAD' });
     if (response.ok) {
       closePwdModal();
-      loadIframe(guessedFile, exam.title);
+      loadExamFullScreen(guessedFile);
     } else {
       showPwdError(); // Sai mật khẩu (trên Web)
     }
   } catch (err) {
     // Chạy trên máy tính (file://) sẽ bị lỗi chặn fetch (CORS)
-    // Tạm bypass để load thẳng iframe
-    console.warn("Chạy local: Bypass kiểm tra file, load thẳng iframe...");
+    // Tạm bypass để load thẳng
+    console.warn("Chạy local: Bypass kiểm tra file, load thẳng...");
     closePwdModal();
-    loadIframe(guessedFile, exam.title);
+    loadExamFullScreen(guessedFile);
   }
 });
 
@@ -448,45 +412,11 @@ pwdInput.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePwdModal();
 });
 
-function loadIframe(fileUrl, title) {
-  loaderEl.classList.add('show');
-  viewerTitleEl.textContent = title;
-  
-  frameEl.src = fileUrl;
-  frameEl.onload = () => {
-    loaderEl.classList.remove('show');
-    viewerEl.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
-  frameEl.onerror = () => {
-    loaderEl.classList.remove('show');
-    alert('Không tải được đề thi. Vui lòng thử lại.');
-  };
+function loadExamFullScreen(fileUrl) {
+  // Thay vì mở iframe gò bó, ta điều hướng trang hiện tại sang thẳng link đề thi (tràn viền 100%)
+  // Nếu nhúng trên Ghost, nó sẽ mở full tab, và Tí có thể dùng nút Back của trình duyệt để quay lại
+  window.open(fileUrl, '_blank');
 }
-
-function closeExam() {
-  viewerEl.classList.remove('open');
-  document.body.style.overflow = '';
-  // Unload iframe to free memory (PROJECT_CONTEXT rule)
-  frameEl.src = 'about:blank';
-}
-
-// Back button & Close button
-document.getElementById('btnBack').addEventListener('click', function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  closeExam();
-});
-document.getElementById('btnClose').addEventListener('click', function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  closeExam();
-});
-
-// ESC to close
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && viewerEl.classList.contains('open')) closeExam();
-});
 
 // Keyboard support on rows
 document.addEventListener('keydown', e => {
