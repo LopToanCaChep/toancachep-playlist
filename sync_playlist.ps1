@@ -240,7 +240,7 @@ foreach ($row in $csvData) {
 
 Write-Host "3. Cap nhat index.html..." -ForegroundColor Cyan
 $examsJsonStr = $examsJsonArr -join ",`n"
-$htmlContent = Get-Content $HtmlPath -Raw
+$htmlContent = Get-Content $HtmlPath -Raw -Encoding UTF8
 $pattern = "(?s)const EXAMS = \[.*?\];"
 $replacement = "const EXAMS = [`n$examsJsonStr`n];"
 $newHtmlContent = $htmlContent -replace $pattern, $replacement
