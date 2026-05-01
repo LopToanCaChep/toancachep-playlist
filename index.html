@@ -34,8 +34,8 @@ body{
 
 /* ========== HEADER ========== */
 .hub-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px}
-.hub-logo{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--cc-blue-deep)}
-.hub-logo span{color:var(--cc-yellow)}
+.hub-logo{height:36px;object-fit:contain}
+.hub-logo-text{display:none}
 .hub-mascot{width:44px;height:44px;object-fit:contain;
   animation:float 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -213,8 +213,8 @@ body{
 
   <!-- Header -->
   <header class="hub-header">
-    <div class="hub-logo">Cá <span>Chép</span></div>
-    <img class="hub-mascot" src="Pic/logo_right.png" alt="Cá Chép logo">
+    <img class="hub-logo" src="Pic/logoleft.png" alt="Cá Chép">
+    <img class="hub-mascot" src="Pic/logoright.png" alt="Cá Chép mascot">
   </header>
 
   <!-- Hero -->
@@ -485,6 +485,7 @@ if (gradeParam) {
 </script>
 </body>
 </html>
+
 
 
 
