@@ -2059,7 +2059,7 @@
 <div class="part-card"><h2>PHẦN I<br/>TRẮC NGHIỆM LỰA CHỌN</h2></div>
 </div>
 <div class="slide" data-i="2" id="slide-2">
-<div class="card" data-answer="A">
+<div class="card" data-answer="C">
 <div class="q-badge">CÂU 1</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Trên khoảng \((-\infty ;+\infty)\), hàm số \(F(x)=\dfrac{1}{2} \sin 2 x\) là một nguyên hàm của hàm số nào dưới đây?</div>
@@ -2072,9 +2072,8 @@
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Chọn C.
 Ta có \(\left(\dfrac{1}{2} \sin 2 x\right)^{\prime}=\cos 2 x\).
-<br/><b>→ Đáp án A.</b>
+<br/><b>→ Đáp án C.</b>
 </div></div>
 </div>
 </div>
@@ -2135,7 +2134,6 @@ là \(S=\int_{0}^{1}\left|3 x^{2}+2\right| d x=\int_{0}^{1}\left(3 x^{2}+2\right
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Chọn C.
 \(V=\pi \int_{a}^{b}[f(x)]^{2} \mathrm{~d} x \Rightarrow V=\pi \int_{0}^{2}\left(x^{2}+3\right)^{2} \mathrm{~d} x\).
 <br/><b>→ Đáp án C.</b>
 </div></div>
@@ -2759,7 +2757,7 @@ Vậy bán kính của mặt cầu bằng \(4-3,6=0,4(m)\)
         function closeConfirm() { document.getElementById('confirmOverlay').style.display = 'none'; }
         function collectResults() {
             const data = { ...studentInfo, exam: 'HKII_De02', p1: {}, p2: {}, p3: {} };
-            const p1Ans = ['A', 'C', 'D', 'C', 'C', 'C', 'C', 'C', 'B', 'A', 'B', 'A'];
+            const p1Ans = ['C', 'C', 'D', 'C', 'C', 'C', 'C', 'C', 'B', 'A', 'B', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
             const p3Ans = ['2.65', '667', '0.73', '6', '12', '0.4'];
@@ -2811,7 +2809,7 @@ Vậy bán kính của mặt cầu bằng \(4-3,6=0,4(m)\)
         function revealAllResults(data) {
             document.body.classList.add('submitted');
             document.querySelectorAll('.submit-btn').forEach(b => { b.disabled = true; b.style.display = 'none'; });
-            const p1Ans = ['A', 'C', 'D', 'C', 'C', 'C', 'C', 'C', 'B', 'A', 'B', 'A'];
+            const p1Ans = ['C', 'C', 'D', 'C', 'C', 'C', 'C', 'C', 'B', 'A', 'B', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
             const p3Ans = ['2.65', '667', '0.73', '6', '12', '0.4'];
@@ -2838,7 +2836,7 @@ Vậy bán kính của mặt cầu bằng \(4-3,6=0,4(m)\)
         function convertToResultPanel(data) {
             const panel = document.getElementById('progressPanel'), fab = document.getElementById('progressFab');
             fab.innerHTML = '📊<span class="fab-badge" style="background:var(--primary-blue)">KQ</span>';
-            const p1Ans = ['A', 'C', 'D', 'C', 'C', 'C', 'C', 'C', 'B', 'A', 'B', 'A'];
+            const p1Ans = ['C', 'C', 'D', 'C', 'C', 'C', 'C', 'C', 'B', 'A', 'B', 'A'];
             const p3Ans = ['2.65', '667', '0.73', '6', '12', '0.4'];
             let p1c = '', p2c = '', p3c = '';
             for (let i = 0; i < 12; i++) { const picked = data.p1['c' + (i + 1)]; const ok = data.p1['c' + (i + 1) + '_correct']; let cls = picked ? (ok ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p1c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${i})">${i + 1}</div>`; }

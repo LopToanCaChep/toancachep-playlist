@@ -2278,7 +2278,7 @@ Mặt phẳng \((P)\) có phương trình \(x-3 y-z+8=0\) thì có một vectơ 
 </div>
 </div>
 <div class="slide" data-i="12" id="slide-12">
-<div class="card" data-answer="A">
+<div class="card" data-answer="C">
 <div class="q-badge">CÂU 11</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho hai điểm \(A(1 ;-2 ; 3)\) và \(B(3 ; 1 ; 1)\). Đường thẳng \(A B\) có phương trình là</div>
@@ -2291,9 +2291,8 @@ Mặt phẳng \((P)\) có phương trình \(x-3 y-z+8=0\) thì có một vectơ 
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Chọn C.
 Đường thẳng \(A B\) có một vectơ chỉ phương là \(\overrightarrow{A B}=(2 ; 3 ;-2)\).
-<br/><b>→ Đáp án A.</b>
+<br/><b>→ Đáp án C.</b>
 </div></div>
 </div>
 </div>
@@ -2754,7 +2753,7 @@ Vậy thời gian khinh khí cầu bay thẳng từ \(M\) đến \(N\) là \(4 h
         function closeConfirm() { document.getElementById('confirmOverlay').style.display = 'none'; }
         function collectResults() {
             const data = { ...studentInfo, exam: 'HKII_De02', p1: {}, p2: {}, p3: {} };
-            const p1Ans = ['A', 'C', 'D', 'D', 'B', 'D', 'C', 'C', 'B', 'B', 'A', 'A'];
+            const p1Ans = ['A', 'C', 'D', 'D', 'B', 'D', 'C', 'C', 'B', 'B', 'C', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
             const p3Ans = ['42', '771', '0.33', '3', '252', '240'];
@@ -2806,7 +2805,7 @@ Vậy thời gian khinh khí cầu bay thẳng từ \(M\) đến \(N\) là \(4 h
         function revealAllResults(data) {
             document.body.classList.add('submitted');
             document.querySelectorAll('.submit-btn').forEach(b => { b.disabled = true; b.style.display = 'none'; });
-            const p1Ans = ['A', 'C', 'D', 'D', 'B', 'D', 'C', 'C', 'B', 'B', 'A', 'A'];
+            const p1Ans = ['A', 'C', 'D', 'D', 'B', 'D', 'C', 'C', 'B', 'B', 'C', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
             const p3Ans = ['42', '771', '0.33', '3', '252', '240'];
@@ -2833,7 +2832,7 @@ Vậy thời gian khinh khí cầu bay thẳng từ \(M\) đến \(N\) là \(4 h
         function convertToResultPanel(data) {
             const panel = document.getElementById('progressPanel'), fab = document.getElementById('progressFab');
             fab.innerHTML = '📊<span class="fab-badge" style="background:var(--primary-blue)">KQ</span>';
-            const p1Ans = ['A', 'C', 'D', 'D', 'B', 'D', 'C', 'C', 'B', 'B', 'A', 'A'];
+            const p1Ans = ['A', 'C', 'D', 'D', 'B', 'D', 'C', 'C', 'B', 'B', 'C', 'A'];
             const p3Ans = ['42', '771', '0.33', '3', '252', '240'];
             let p1c = '', p2c = '', p3c = '';
             for (let i = 0; i < 12; i++) { const picked = data.p1['c' + (i + 1)]; const ok = data.p1['c' + (i + 1) + '_correct']; let cls = picked ? (ok ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p1c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${i})">${i + 1}</div>`; }
