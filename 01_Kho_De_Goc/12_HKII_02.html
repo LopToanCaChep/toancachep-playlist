@@ -2080,7 +2080,7 @@ Mặt khác, \(F(0)=5 \Rightarrow C=5\). Vậy \(F(x)=x^{3}+5\).
 </div>
 </div>
 <div class="slide" data-i="3" id="slide-3">
-<div class="card" data-answer="C">
+<div class="card" data-answer="B">
 <div class="q-badge">CÂU 2</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Cho hàm số \(y=f(x)\) có đạo hàm liên tục trên đoạn \([a ; b]\) và \(f(a)=-1 ; f(b)=3\). Khi đó \(\int_{a}^{b} f^{\prime}(x) d x\) bằng</div>
@@ -2094,13 +2094,13 @@ Mặt khác, \(F(0)=5 \Rightarrow C=5\). Vậy \(F(x)=x^{3}+5\).
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
 \(\int_{a}^{b} f^{\prime}(x) d x=\left.f(x)\right|_{a} ^{b}=f(b)-f(a)=3+1=4\).
-<br/><b>→ Đáp án C.</b>
+<br/><b>→ Đáp án B.</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="4" id="slide-4">
-<div class="card" data-answer="B">
+<div class="card" data-answer="C">
 <div class="q-badge">CÂU 3</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Cho hàm số \(y=f(x)\) liên tục trên \([a ; b]\). Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành và hai đường thẳng \(x=a ; x=b\) được tính bởi công thức nào sau đây?</div>
@@ -2115,7 +2115,7 @@ Mặt khác, \(F(0)=5 \Rightarrow C=5\). Vậy \(F(x)=x^{3}+5\).
 <b>Lời giải:</b><br/>
 Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành và hai đường thẳng \(x=a ; x=b\) :
 \(S=\int_{a}^{b}|f(x)| d x\).
-<br/><b>→ Đáp án B.</b>
+<br/><b>→ Đáp án C.</b>
 </div></div>
 </div>
 </div>
@@ -2183,7 +2183,7 @@ Thể tích khối tròn xoay là: \(V=\pi \int_{0}^{\pi}(\sin x)^{2} \mathrm{~d
 </div>
 </div>
 <div class="slide" data-i="8" id="slide-8">
-<div class="card" data-answer="C">
+<div class="card" data-answer="A">
 <div class="q-badge">CÂU 7</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Cho \(A\) và \(B\) là hai biến cố bất kỳ. Khẳng định nào sau đây đúng?</div>
@@ -2197,7 +2197,7 @@ Thể tích khối tròn xoay là: \(V=\pi \int_{0}^{\pi}(\sin x)^{2} \mathrm{~d
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
 Ta có công thức nhân xác suất \(P(A B)=P(A) \cdot P(B)\)
-<br/><b>→ Đáp án C.</b>
+<br/><b>→ Đáp án A.</b>
 </div></div>
 </div>
 </div>
@@ -2749,7 +2749,7 @@ Vậy có 3 người có thể sử dụng dịch vụ của trạm nói trên.
         function closeConfirm() { document.getElementById('confirmOverlay').style.display = 'none'; }
         function collectResults() {
             const data = { ...studentInfo, exam: 'HKII_De02', p1: {}, p2: {}, p3: {} };
-            const p1Ans = ['C', 'C', 'B', 'C', 'A', 'B', 'C', 'C', 'B', 'C', 'D', 'A'];
+            const p1Ans = ['C', 'B', 'C', 'C', 'A', 'B', 'A', 'C', 'B', 'C', 'D', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
             const p3Ans = ['42', '634', '0.24', '26.6', '400', '3'];
@@ -2801,7 +2801,7 @@ Vậy có 3 người có thể sử dụng dịch vụ của trạm nói trên.
         function revealAllResults(data) {
             document.body.classList.add('submitted');
             document.querySelectorAll('.submit-btn').forEach(b => { b.disabled = true; b.style.display = 'none'; });
-            const p1Ans = ['C', 'C', 'B', 'C', 'A', 'B', 'C', 'C', 'B', 'C', 'D', 'A'];
+            const p1Ans = ['C', 'B', 'C', 'C', 'A', 'B', 'A', 'C', 'B', 'C', 'D', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
             const p3Ans = ['42', '634', '0.24', '26.6', '400', '3'];
@@ -2828,7 +2828,7 @@ Vậy có 3 người có thể sử dụng dịch vụ của trạm nói trên.
         function convertToResultPanel(data) {
             const panel = document.getElementById('progressPanel'), fab = document.getElementById('progressFab');
             fab.innerHTML = '📊<span class="fab-badge" style="background:var(--primary-blue)">KQ</span>';
-            const p1Ans = ['C', 'C', 'B', 'C', 'A', 'B', 'C', 'C', 'B', 'C', 'D', 'A'];
+            const p1Ans = ['C', 'B', 'C', 'C', 'A', 'B', 'A', 'C', 'B', 'C', 'D', 'A'];
             const p3Ans = ['42', '634', '0.24', '26.6', '400', '3'];
             let p1c = '', p2c = '', p3c = '';
             for (let i = 0; i < 12; i++) { const picked = data.p1['c' + (i + 1)]; const ok = data.p1['c' + (i + 1) + '_correct']; let cls = picked ? (ok ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p1c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${i})">${i + 1}</div>`; }
