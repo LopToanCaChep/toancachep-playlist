@@ -2125,7 +2125,7 @@ Khi đó \(\int_{1}^{4}[f(x)+2] \mathrm{dx}=\int_{1}^{4} f(x) \mathrm{dx}+\int_{
 </div>
 </div>
 <div class="slide" data-i="5" id="slide-5">
-<div class="card" data-answer="B">
+<div class="card" data-answer="A">
 <div class="q-badge">CÂU 4</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Diện tích hình phẳng giới hạn bởi các đường \(y=\mathrm{e}^{x}, y=0, x=0, x=2\) là:</div>
@@ -2140,7 +2140,7 @@ Khi đó \(\int_{1}^{4}[f(x)+2] \mathrm{dx}=\int_{1}^{4} f(x) \mathrm{dx}+\int_{
 <b>Lời giải:</b><br/>
 Diện tích hình phẳng giới hạn bởi các đường \(y=\mathrm{e}^{x}, y=0, x=0, x=2\) là:
 \(S=\int_{0}^{2} e^{x} \mathrm{~d} x=\left.e^{x}\right|_{0} ^{2}=e^{2}-1\).
-<br/><b>→ Đáp án B.</b>
+<br/><b>→ Đáp án A.</b>
 </div></div>
 </div>
 </div>
@@ -2770,7 +2770,7 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
         function closeConfirm() { document.getElementById('confirmOverlay').style.display = 'none'; }
         function collectResults() {
             const data = { ...studentInfo, exam: 'HKII_De02', p1: {}, p2: {}, p3: {} };
-            const p1Ans = ['C', 'D', 'B', 'B', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
+            const p1Ans = ['C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
             const p3Ans = ['13.7', '15', '0.33', '37.3', '42', '5'];
@@ -2822,7 +2822,7 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
         function revealAllResults(data) {
             document.body.classList.add('submitted');
             document.querySelectorAll('.submit-btn').forEach(b => { b.disabled = true; b.style.display = 'none'; });
-            const p1Ans = ['C', 'D', 'B', 'B', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
+            const p1Ans = ['C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
             const p3Ans = ['13.7', '15', '0.33', '37.3', '42', '5'];
@@ -2849,7 +2849,7 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
         function convertToResultPanel(data) {
             const panel = document.getElementById('progressPanel'), fab = document.getElementById('progressFab');
             fab.innerHTML = '📊<span class="fab-badge" style="background:var(--primary-blue)">KQ</span>';
-            const p1Ans = ['C', 'D', 'B', 'B', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
+            const p1Ans = ['C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
             const p3Ans = ['13.7', '15', '0.33', '37.3', '42', '5'];
             let p1c = '', p2c = '', p3c = '';
             for (let i = 0; i < 12; i++) { const picked = data.p1['c' + (i + 1)]; const ok = data.p1['c' + (i + 1) + '_correct']; let cls = picked ? (ok ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p1c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${i})">${i + 1}</div>`; }

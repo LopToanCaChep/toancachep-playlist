@@ -4,16 +4,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,maximum-scale=5" name="viewport"/>
-<title>Đề 07 — Ôn Tập Học Kỳ II — Toán 12</title>
+<title>Đề 01 — Ôn Tập Học Kỳ II — Toán 12</title>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Manrope:wght@400;600;700;800&amp;family=Unbounded:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
-<script>
-        window.MathJax = {
-            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
-            chtml: { scale: 0.82 },
-            startup: { pageReady: () => MathJax.startup.defaultPageReady() }
-        };
-    </script>
-<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '\\\\(', right: '\\\\)', display: false},
+      {left: '\\\\[', right: '\\\\]', display: true},
+      {left: '$$', right: '$$', display: true}
+    ],
+    throwOnError: false
+  });"></script>
+<style>.katex { font-size: 0.92em; }</style>
 <style>
         :root {
             --primary-blue: #0040BE;
@@ -2046,7 +2050,7 @@
 <div class="sunburst"></div>
 <div class="tc">
 <div class="brand">LỚP TOÁN CÁ CHÉP</div>
-<h1>HỌC KỲ II - ĐỀ 07</h1>
+<h1>HỌC KỲ II - ĐỀ 01</h1>
 <div class="sub">TOÁN 12 - NĂM HỌC 2025-2026</div>
 <div class="info-pill">
 <div class="ii"><div class="num">22</div><div class="lbl">CÂU HỎI</div></div>
@@ -2059,108 +2063,110 @@
 <div class="part-card"><h2>PHẦN I<br/>TRẮC NGHIỆM LỰA CHỌN</h2></div>
 </div>
 <div class="slide" data-i="2" id="slide-2">
-<div class="card" data-answer="C">
+<div class="card" data-answer="A">
 <div class="q-badge">CÂU 1</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Tìm khẳng định sai</div>
-<div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(\int[f(x)+g(x)] d x=\int f(x) d x+\int g(x) d x\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(\int f^{\prime}(x) d x=f(x)+C\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(\int f(x) g(x) d x=\int f(x) d x . \int g(x) d x\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\int_{a}^{b} f(x) d x=\int_{a}^{c} f(x) d x+\int_{c}^{b} f(x) d x, a&lt;c&lt;b\)</span></div>
-</div>
-<button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
-<div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
-<b>Lời giải:</b><br/>
-Áp dụng các tính chất của nguyên hàm, tích phân suy ra khẳng định sai là C
-<br/><b>→ Đáp án C.</b>
-</div></div>
-</div>
-</div>
-</div>
-<div class="slide" data-i="3" id="slide-3">
-<div class="card" data-answer="D">
-<div class="q-badge">CÂU 2</div><div class="part-tag">PHẦN I</div>
-<div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Biết rằng \(F(x)\) là một nguyên hàm của hàm số \(f(x)\) trên đoạn \([1 ; 4]\) và \(F(4)=9, F(1)=3\).
-Giá trị của \(\int_{1}^{4}[f(x)+2] \mathrm{dx}\) bằng</div>
+<div class="q-text" style="white-space: pre-wrap;">Gọi \(F(x)\) là một nguyên hàm của hàm số \(f(x)=2 x-\dfrac{1}{x}\) thoả mãn \(F(1)=1\). Tính \(F(-1)\).</div>
 <div class="opts c4">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(0\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(8\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(-4\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(12\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(F(-1)=1\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(F(-1)=2\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(F(-1)=-1\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(F(-1)=0\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Ta có \(\int_{1}^{4} f(x)=\left.F(x)\right|_{1} ^{4}=F(4)-F(1)=9-3=6\).
-Khi đó \(\int_{1}^{4}[f(x)+2] \mathrm{dx}=\int_{1}^{4} f(x) \mathrm{dx}+\int_{1}^{4} 2 \mathrm{dx}=6+6=12\).
-<br/><b>→ Đáp án D.</b>
-</div></div>
-</div>
-</div>
-</div>
-<div class="slide" data-i="4" id="slide-4">
-<div class="card" data-answer="B">
-<div class="q-badge">CÂU 3</div><div class="part-tag">PHẦN I</div>
-<div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Cho hàm số \(f(x)=-x^{3}+3 x^{2}+2\) có đồ thị ( \(C\) ) như hình vẽ. Tính diện tích \(S\) có hình phẳng được tô như trong hình.
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-118.jpg?height=438&width=366&top_left_y=1877&top_left_x=861" style="max-width:100%; border-radius:8px;"/></div></div>
-<div class="opts c4">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(S=10\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(S=\dfrac{39}{4}\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(S=\dfrac{41}{4}\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(S=13\)</span></div>
-</div>
-<button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
-<div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
-<b>Lời giải:</b><br/>
-Đường thẳng đi qua điểm \((0 ; 0),(3 ; 2)\) có phương trình là: \(y=\dfrac{2}{3} x\).
-\(
-\Rightarrow S=\int_{0}^{3}\left(-x^{3}+3 x^{2}+2-\dfrac{2}{3} x\right)=\left.\left(-\dfrac{x^{4}}{4}+x^{3}+2 x-\dfrac{1}{3} x^{2}\right)\right|_{0} ^{3}=\dfrac{39}{4} .
-\)
-<br/><b>→ Đáp án B.</b>
-</div></div>
-</div>
-</div>
-</div>
-<div class="slide" data-i="5" id="slide-5">
-<div class="card" data-answer="A">
-<div class="q-badge">CÂU 4</div><div class="part-tag">PHẦN I</div>
-<div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Diện tích hình phẳng giới hạn bởi các đường \(y=\mathrm{e}^{x}, y=0, x=0, x=2\) là:</div>
-<div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(e^{2}-1\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(e^{2}\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(e^{2}+1\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\left(e^{2}-1\right) \pi\)</span></div>
-</div>
-<button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
-<div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
-<b>Lời giải:</b><br/>
-Diện tích hình phẳng giới hạn bởi các đường \(y=\mathrm{e}^{x}, y=0, x=0, x=2\) là:
-\(S=\int_{0}^{2} e^{x} \mathrm{~d} x=\left.e^{x}\right|_{0} ^{2}=e^{2}-1\).
+Ta có: \(\int f(x) d x=\int\left(2 x-\dfrac{1}{x}\right) d x=x^{2}-\ln |x|+C\).
+\(\Rightarrow F(x)=x^{2}-\ln |x|+C\)
+Vì \(F(1)=1 \Rightarrow C=0\)
+Vậy một nguyên hàm của hàm số \(f(x)=2 x-\dfrac{1}{x}\) thoả mãn \(F(1)=1\) là \(\Rightarrow F(x)=x^{2}-\ln |x|\).
+Do đó \(F(-1)=1\).
 <br/><b>→ Đáp án A.</b>
 </div></div>
 </div>
 </div>
 </div>
-<div class="slide" data-i="6" id="slide-6">
-<div class="card" data-answer="B">
-<div class="q-badge">CÂU 5</div><div class="part-tag">PHẦN I</div>
+<div class="slide" data-i="3" id="slide-3">
+<div class="card" data-answer="A">
+<div class="q-badge">CÂU 2</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Cắt một vật thể bởi hai mặt phẳng vuông góc với trục \(O x\) tại \(x=1\) và \(x=2\). Một mặt phẳng tùy ý vuông góc với trục \(O x\) tại điểm có hoành độ \(x(1 \leq x \leq 2)\) cắt vật thể đó có diện tích \(S(x)=2026 x\). Tính thể tích của phần vật thể giới hạn bởi hai mặt phẳng trên.</div>
+<div class="q-text" style="white-space: pre-wrap;">Cho hàm số \(f(x)\) liên tục trên \([a ; c]\) và \(b\) là số thực tùy ý thuộc đoạn \([a ; c]\). Nếu biết \(\int_{a}^{b} f(x) d x=-5\) và \(\int_{b}^{c} f(x) d x=10\), thì giá trị của \(\int_{a}^{c} f(x) d x\) là bao nhiêu?</div>
 <div class="opts c4">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(1518 \pi\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(3039\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(3039 \pi\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(3036\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(5\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(-5\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(15\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(-15\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Ta có \(V=\int_{1}^{2} S(x) d x=\int_{1}^{2} 2026 x d x=3039\).
+Vì \(b \in[a ; c]\) nên \(\int_{a}^{c} f(x) d x=\int_{a}^{b} f(x) d x+\int_{b}^{c} f(x) d x=-5+10=5\).
+<br/><b>→ Đáp án A.</b>
+</div></div>
+</div>
+</div>
+</div>
+<div class="slide" data-i="4" id="slide-4">
+<div class="card" data-answer="A">
+<div class="q-badge">CÂU 3</div><div class="part-tag">PHẦN I</div>
+<div class="q-body">
+<div class="q-text" style="white-space: pre-wrap;">Diện tích hình phẳng được giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành, trục tung và đường thẳng \(x=a, a&gt;0\) ( phần tô đậm trong hình vẽ) được tính theo công thức
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-007.jpg?height=339&width=412&top_left_y=2108&top_left_x=877" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="opts c1">
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(S=\int_{0}^{c} f(x) d x-\int_{a}^{c} f(x) d x\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(S=-\int_{0}^{a} f(x) d x\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(S=-\int_{0}^{c} f(x) d x+\int_{a}^{c} f(x) d x\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(S=\int_{0}^{c} f(x) d x+\int_{a}^{c} f(x) d x\)</span></div>
+</div>
+<button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
+<div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
+<b>Lời giải:</b><br/>
+Diện tích hình phẳng: \(S=\int_{0}^{a}|f(x)| \mathrm{d} x=\int_{0}^{c}|f(x)| \mathrm{d} x+\int_{c}^{a}|f(x)| \mathrm{d} x=\int_{0}^{c} f(x) \mathrm{d} x-\int_{c}^{a} f(x) \mathrm{d} x\)
+<br/><b>→ Đáp án A.</b>
+</div></div>
+</div>
+</div>
+</div>
+<div class="slide" data-i="5" id="slide-5">
+<div class="card" data-answer="B">
+<div class="q-badge">CÂU 4</div><div class="part-tag">PHẦN I</div>
+<div class="q-body">
+<div class="q-text" style="white-space: pre-wrap;">Diện tích hình phẳng giới hạn bởi đồ thị của các hàm số \(y=|\ln x|, y=1\) được tính bởi công thức:</div>
+<div class="opts c1">
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(S=\int_{1}^{e}|(|\ln x|-1)| \mathrm{d} x\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(S=\int_{\dfrac{1}{e}}^{e}(1-|\ln x|) \mathrm{d} x\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(S=\int_{1}^{e}|(1-|\ln x|)| \mathrm{d} x\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(S=\int_{\dfrac{1}{e}}^{e}(|\ln x|-1) \mathrm{d} x\)</span></div>
+</div>
+<button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
+<div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
+<b>Lời giải:</b><br/>
+Xét phương trình: \(|\ln x|=1 \Leftrightarrow\left[\begin{array}{l}\ln x=-1 \\ \ln x=1\end{array} \Leftrightarrow\left[\begin{array}{l}x=\dfrac{1}{e} \\ x=e\end{array}\right.\right.\)
+Khi đó: Diện tích hình phẳng giới hạn bởi đồ thị của các hàm số \(y=|\ln x|, y=1\) được tính bởi công thức:
+\(S=\int_{\dfrac{1}{e}}^{e}|1-|\ln x|| \mathrm{d} x=\int_{\dfrac{1}{e}}^{e}(1-|\ln x|) \mathrm{d} x\).
 <br/><b>→ Đáp án B.</b>
+</div></div>
+</div>
+</div>
+</div>
+<div class="slide" data-i="6" id="slide-6">
+<div class="card" data-answer="D">
+<div class="q-badge">CÂU 5</div><div class="part-tag">PHẦN I</div>
+<div class="q-body">
+<div class="q-text" style="white-space: pre-wrap;">Khi cắt vật thể bởi mặt phẳng vuông góc với trục \(O x\) tại điểm có hoành độ là \(x,(0 \leq x \leq 3)\) ta được mặt cắt là một hình vuông có cạnh là \(\sqrt{9-x^{2}}\) (được mô hình hóa bởi hình vẽ bên dưới). Thể tích của vật thể đó bằng
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-008.jpg?height=307&width=392&top_left_y=1816&top_left_x=785" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="opts c4">
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(171 \pi\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(171\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(18 \pi\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(18\)</span></div>
+</div>
+<button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
+<div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
+<b>Lời giải:</b><br/>
+Diện tích mặt cắt hình vuông: \(S=9-x^{2}\)
+Thể tích của vật: \(V=\int_{0}^{3}\left(9-x^{2}\right) \mathrm{d} x=18\).
+<br/><b>→ Đáp án D.</b>
 </div></div>
 </div>
 </div>
@@ -2169,132 +2175,128 @@ Ta có \(V=\int_{1}^{2} S(x) d x=\int_{1}^{2} 2026 x d x=3039\).
 <div class="card" data-answer="D">
 <div class="q-badge">CÂU 6</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Thể tích khối tròn xoay giới hạn bởi các đường \(y=2 x-x^{2}, y=0\) khi quay quanh trục \(O x\) là:
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-119.jpg?height=344&width=467&top_left_y=1553&top_left_x=751" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="q-text" style="white-space: pre-wrap;">Thể tích hình khối do hình phẳng giới hạn bởi các đường \(y=x^{2}-4\), \(y=2 x-4, x=0, x=2\) quay quanh trục \(O x\) bằng:
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-009.jpg?height=584&width=252&top_left_y=118&top_left_x=977" style="max-width:100%; border-radius:8px;"/></div></div>
 <div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(\dfrac{4 \pi}{3}\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(\dfrac{13 \pi}{15}\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(\dfrac{14 \pi}{15}\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\dfrac{16 \pi}{15}\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(\dfrac{416 \pi}{15}\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(\dfrac{752 \pi}{5}\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(\dfrac{16 \pi}{15}\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(\dfrac{32 \pi}{5}\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Phương trình hoành độ giao điểm là: \(-x^{2}+2 x=0 \Leftrightarrow\left[\begin{array}{l}x=0 \\ x=2\end{array}\right.\)
-Thể tích khối tròn xoay là: \(V=\pi \int_{0}^{2}\left(2 x-x^{2}\right)^{2} \mathrm{~d} x=\dfrac{16 \pi}{15}\)
+Phương trình hoành độ giao điểm là: \(x^{2}-4=2 x-4 \Leftrightarrow\left[\begin{array}{l}x=0 \\ x=2\end{array}\right.\)
+Thể tích của hình khối là: \(V=\pi \int_{0}^{2}\left|\left(x^{2}-4\right)^{2}-(2 x-4)^{2}\right| \mathrm{d} x=\dfrac{32 \pi}{5}\).
 <br/><b>→ Đáp án D.</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="8" id="slide-8">
-<div class="card" data-answer="C">
+<div class="card" data-answer="B">
 <div class="q-badge">CÂU 7</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Cho hai biến cố \(A, B\) sao cho \(P(A)=0,6 ; P(B)=0,5 ; P(A \mid B)=0,2\). Khi đó \(P(B \mid A)\) bằng</div>
+<div class="q-text" style="white-space: pre-wrap;">Cho hai biến cố \(A\) và \(B\). Xác suất của biến cố \(A\) với điều kiện biến cố \(B\) đã xảy ra được gọi là xác suất của \(A\) với điều kiện \(B\), kí hiệu là \(P(A \mid B)\). Chọn khẳng định đúng trong các khẳng định sau đây</div>
 <div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(\dfrac{6}{25}\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(\dfrac{3}{25}\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(\dfrac{1}{6}\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\dfrac{1}{3}\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>Nếu \(P(A)&gt;0\) thì \(P(A \mid B)=\dfrac{P(A B)}{P(A)}\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>Nếu \(P(B)&gt;0\) thì \(P(A \mid B)=\dfrac{P(A B)}{P(B)}\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>Nếu \(P(B)&gt;0\) thì \(P(A \mid B)=\dfrac{P(A B)}{P(A)}\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>Nếu \(P(A)&gt;0\) thì \(P(A \mid B)=\dfrac{P(A B)}{P(B)}\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Ta có: \(P(B \mid A)=\dfrac{P(B) \cdot P(A \mid B)}{P(A)}=\dfrac{0,5 \cdot 0,2}{0,6}=\dfrac{1}{6}\).
-<br/><b>→ Đáp án C.</b>
+Cho hai biến cố \(A\) và \(B\) bất kì khi đó nếu \(P(B)&gt;0\) thì \(P(A \mid B)=\dfrac{P(A B)}{P(B)}\).
+<br/><b>→ Đáp án B.</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="9" id="slide-9">
-<div class="card" data-answer="A">
+<div class="card" data-answer="C">
 <div class="q-badge">CÂU 8</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong hộp có 3 cây bút xanh và 7 bút đỏ. Bạn Bảo Toàn lấy lần lượt 2 lần, mỗi lần lấy 1 cây bút và không hoàn lại hộp. Xác suất để cây bút lấy lần thứ hai là bút đỏ nếu biết rằng cây bút lấy lần thứ nhất cũng là bút đỏ là?</div>
-<div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(\dfrac{2}{3}\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(\dfrac{1}{2}\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(\dfrac{2}{7}\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\dfrac{1}{7}\)</span></div>
+<div class="q-text" style="white-space: pre-wrap;">Cho hai biến cố \(A, B\) thỏa mãn \(P(\bar{B})=0,2 ; P(A \mid B)=0,5 ; P(A \mid \bar{B})=0,3\). Khi đó, \(P(A)\) bằng</div>
+<div class="opts c4">
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(0,34\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(0,31\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(0,46\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(0,15\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Gọi \(A\) là biến cố "cây bút lấy lần thứ hai là màu đỏ".
-Gọi \(B\) là biến cố "cây bút lấy lần thứ nhất là màu đỏ".
-Nếu cây bút lấy lần thứ nhất là cây bút đỏ. Khi đó trong hộp còn lại cây bút: gồm 3 cây bút xanh và 6 cây bút đỏ. Vậy xác suất để cây bút lấy lần thứ hai là màu đỏ nếu biết rằng cây bút lấy lần thứ nhất cũng màu đỏ là \(P(A \mid B)=\dfrac{6}{9}=\dfrac{2}{3}\).
-## Cách 2:
-Gọi \(A\) là biến cố "cây bút lấy lần thứ hai là màu đỏ".
-Gọi \(B\) là biến cố "cây bút lấy lần thứ nhất là màu đỏ".
-Ta đi tính \(P(A \mid B)\) với \(P(A \mid B)=\dfrac{P(A B)}{P(B)}\)
-Không gian mẫu \(n(\Omega)=10.9\) cách chọn
-Lần thứ nhất lấy 1 cây bút màu đỏ có 7 cách chọn, lần thứ hai lấy 1 cây bút màu đỏ trong 9 cây bút còn lại có cách 10 chọn, do đó \(P(B)=\dfrac{7.9}{10.9}=\dfrac{7}{10}\)
-Lần thứ nhất lấy 1 cây bút màu đỏ có 7 cách chọn, lần thứ hai lấy 1 cây bút màu đỏ trong 6 cây bút màu đỏ còn lại có 6 cách chọn, do đó \(P(A B)=\dfrac{7.6}{10.9}=\dfrac{7}{15}\)
-Vậy xác suất để viên bi lấy lần thứ hai là màu đỏ nếu biết rằng viên bị lấy lần thứ nhất cũng là màu đỏ là \(P(A \mid B)=\dfrac{P(A B)}{P(B)}=\dfrac{\dfrac{7}{15}}{\dfrac{7}{10}}=\dfrac{2}{3}\)
-<br/><b>→ Đáp án A.</b>
+Áp dụng công thức xác suất toàn phần:
+\[
+\begin{aligned}
+& P(A)=P(A \mid B) \cdot P(B)+P(A \mid \bar{B}) \cdot P(\bar{B}) \\
+& P(A)=0,5 \cdot(1-0,2)+0,3 \cdot 0,2=0,46
+\end{aligned} .
+\]
+<br/><b>→ Đáp án C.</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="10" id="slide-10">
-<div class="card" data-answer="A">
+<div class="card" data-answer="B">
 <div class="q-badge">CÂU 9</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho mặt cầu \((S)\) có phương trình \((x-2)^{2}+(y+1)^{2}+(z-3)^{2}=9\). Toạ độ tâm của mặt cầu đã cho là:</div>
+<div class="q-text" style="white-space: pre-wrap;">Khi đặt hệ tọa độ \(O x y z\) vào không gian với đơn vị trên trục tính theo kilômét, người ta thấy rằng một không gian phủ sóng điện thoại có dạng một hình cầu ( \(S\) ) (tập hợp những điểm nằm trong và nằm
+trên mặt cầu tương ứng). Biết mặt cầu ( \(S\) ) có phương trình \(x^{2}+y^{2}+z^{2}-4 x-2 y-8 z+5=0\). Khoảng cách xa nhất giữa hai điểm thuộc vùng phủ sóng là</div>
 <div class="opts c4">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\((2 ;-1 ; 3)\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\((-2;1;3)\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\((-2;1;-3)\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\((-2;-1;3)\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>10 kilômét</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>8 kilômét</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>5 kilômét</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>4 kilômét</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Phương trình mặt cầu tâm \(I(a, b, c)\), bán kính \(R\) có dạng là \((x-a)^{2}+(y-b)^{2}+(z-c)^{2}=R^{2}\)
-Vậy mặt cầu có phương trình: \((x-2)^{2}+(y+1)^{2}+(z-3)^{2}=9\) sẽ có tâm là \((2 ;-1 ; 3)\).
-<br/><b>→ Đáp án A.</b>
+Mặt cầu ( \(S\) ) có bán kính là \(R=\sqrt{a^{2}+b^{2}+c^{2}-d}=\sqrt{16}=4\).
+Khoảng cách xa nhất giữa hai điểm thuộc vùng phủ sóng là đường kính của mặt cầu nên chọn đáp án \(\mathbf{B}\)
+<br/><b>→ Đáp án B.</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="11" id="slide-11">
-<div class="card" data-answer="D">
+<div class="card" data-answer="B">
 <div class="q-badge">CÂU 10</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), tính khoảng cách từ điểm \(B\left(x_{0} ; y_{0} ; z_{0}\right)\) đến mặt phẳng \((P): y+1=0\). Chọn khẳng định đúng trong các khẳng định sau:</div>
+<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho mặt phẳng \((P)\) có phương trình \(x-3 y-z+8=0\). Vectơ nào sau đây là một vectơ pháp tuyến của mặt phẳng \((P)\) ?</div>
 <div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(y_{0}\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(\left|y_{0}\right|\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(\dfrac{\left|y_{0}+1\right|}{\sqrt{2}}\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\left|y_{0}+1\right|\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(\overrightarrow{n_{1}}(1 ;-3 ; 1)\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(\overrightarrow{n_{2}}(1 ;-3 ;-1)\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(\overrightarrow{n_{3}}(1 ;-3 ; 8)\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(\overrightarrow{n_{4}}(1 ; 3 ; 8)\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-
-<br/><b>→ Đáp án D.</b>
+Mặt phẳng \((P)\) có phương trình \(x-3 y-z+8=0\) thì có một vectơ pháp tuyến là \(\overrightarrow{n_{2}}(1 ;-3 ;-1)\).
+<br/><b>→ Đáp án B.</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="12" id="slide-12">
-<div class="card" data-answer="D">
+<div class="card" data-answer="C">
 <div class="q-badge">CÂU 11</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), đường thẳng nào sau đây nhận \(\vec{u}=(-2 ; 4 ; 5)\) là một vectơ chỉ phương?</div>
+<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho hai điểm \(A(1 ;-2 ; 3)\) và \(B(3 ; 1 ; 1)\). Đường thẳng \(A B\) có phương trình là</div>
 <div class="opts c1">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(\left\{\begin{array}{l}x=-2+3 t \\ y=4-t \\ z=5+4 t\end{array}\right.\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(\left\{\begin{array}{l}x=3+2 t \\ y=-1+4 t \\ z=4+5 t\end{array}\right.\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(\left\{\begin{array}{l}x=3+2 t \\ y=1+4 t \\ z=4+5 t\end{array}\right.\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(\left\{\begin{array}{l}x=3+2 t \\ y=-1-4 t \\ z=4-5 t\end{array}\right.\)</span></div>
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(\dfrac{x-1}{4}=\dfrac{y+2}{-1}=\dfrac{z-3}{4}\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(\dfrac{x-4}{1}=\dfrac{y+1}{-2}=\dfrac{z-4}{3}\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(\dfrac{x-1}{2}=\dfrac{y+2}{3}=\dfrac{z-3}{-2}\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(\dfrac{x-2}{1}=\dfrac{y-3}{-2}=\dfrac{z+2}{3}\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Xét đường thẳng được cho ở câu D , có một vectơ chỉ phương là
-\(\vec{u}=(2 ;-4 ;-5)=-(-2 ; 4 ; 5)(-2 ;-1 ;-1)=-(2 ; 1 ; 1)\) (thỏa đề bài).
-<br/><b>→ Đáp án D.</b>
+Đường thẳng \(A B\) có một vectơ chỉ phương là \(\overrightarrow{A B}=(2 ; 3 ;-2)\).
+<br/><b>→ Đáp án C.</b>
 </div></div>
 </div>
 </div>
@@ -2303,21 +2305,17 @@ Xét đường thẳng được cho ở câu D , có một vectơ chỉ phương
 <div class="card" data-answer="A">
 <div class="q-badge">CÂU 12</div><div class="part-tag">PHẦN I</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho mặt phẳng \((P):-\sqrt{3} x+y+1=0\). Tính góc tạo bởi \((P)\) với trục Ox?</div>
-<div class="opts c4">
-<div class="opt" data-key="A"><strong>A.</strong> <span>\(60^{\circ}\)</span></div>
-<div class="opt" data-key="B"><strong>B.</strong> <span>\(30^{\circ}\)</span></div>
-<div class="opt" data-key="C"><strong>C.</strong> <span>\(120^{0}\)</span></div>
-<div class="opt" data-key="D"><strong>D.</strong> <span>\(150^{0}\)</span></div>
+<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), gọi \(\alpha\) là góc giữa hai đường thẳng \(A B, C D\). Khẳng định nào sau đây là khẳng định đúng:</div>
+<div class="opts c1">
+<div class="opt" data-key="A"><strong>A.</strong> <span>\(\cos \alpha=\dfrac{|\overrightarrow{A B} \cdot \overrightarrow{C D}|}{|\overrightarrow{A B}| \cdot|\overrightarrow{C D}|}\)</span></div>
+<div class="opt" data-key="B"><strong>B.</strong> <span>\(\cos \alpha=\dfrac{\overrightarrow{A B} \cdot \overrightarrow{C D}}{|\overrightarrow{A B}| \cdot|\overrightarrow{C D}|}\)</span></div>
+<div class="opt" data-key="C"><strong>C.</strong> <span>\(\cos \alpha=\dfrac{|\overrightarrow{A B} \cdot \overrightarrow{C D}|}{|[\overrightarrow{A B}, \overrightarrow{C D}]|}\)</span></div>
+<div class="opt" data-key="D"><strong>D.</strong> <span>\(\cos \alpha=\dfrac{|[\overrightarrow{A B} \cdot \overrightarrow{C D}]|}{|\overrightarrow{A B}| \cdot|\overrightarrow{C D}|}\)</span></div>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Mặt phẳng \((P)\) có VTPT \(\vec{n}=(-\sqrt{3} ; 1 ; 0)\)
-Trục \(O x\) có VTCP \(\vec{i}=(1 ; 0 ; 0)\)
-Góc tạo bởi \((P)\) với trục \(O x\)
-\(\sin ((\mathrm{P}) ; O x)=|\cos ((\mathrm{P}) ; O x)|=\dfrac{|\vec{n} \cdot \vec{i}|}{|\vec{n}| \cdot|\vec{i}|}=\dfrac{|-\sqrt{3} \cdot 1+1 \cdot 0+0 \cdot 0|}{\sqrt{3+1} \cdot \sqrt{1}}=\dfrac{\sqrt{3}}{2}\)
-Vậy góc tạo bởi \((P)\) với trục \(O x\) bằng \(60^{\circ}\).
+Áp dụng công thức ở lý thuyết.
 <br/><b>→ Đáp án A.</b>
 </div></div>
 </div>
@@ -2330,25 +2328,25 @@ Vậy góc tạo bởi \((P)\) với trục \(O x\) bằng \(60^{\circ}\).
 <div class="card" data-answer="TF">
 <div class="q-badge">CÂU 1</div><div class="part-tag">PHẦN II</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Cho hàm số \(f(x)=\dfrac{x}{2}+\cos x\).</div>
+<div class="q-text" style="white-space: pre-wrap;">Một em học sinh đang điều khiển xe máy chạy trên đường thẳng với vận tốc \(10 \mathrm{~m} / \mathrm{s}\) thì phát hiện chướng ngại vật lớn trên đường cách đó 50 mét. Học sinh phản ứng hai giây sau đó bằng cách đạp phanh cho xe dừng lại. Kể từ thời điểm này, xe máy chuyển động chậm dần đều với gia tốc \(a=-2 \mathrm{~m} / \mathrm{s}^{2}\).</div>
 <div class="tfg"><div class="tfr"><div></div><div class="tfh">Đ</div><div class="tfh">S</div></div>
-<div class="tfr" data-tf="S">
-<div class="tft"><strong>a)</strong> Hàm số \(f(x)\) có tập xác định là đoạn \([-1 ; 1]\)</div>
+<div class="tfr" data-tf="D">
+<div class="tft"><strong>a)</strong> Sau khi đạp phanh 5 giây thì xe dừng lại.</div>
 <div style="justify-content:center"><input name="tf_c13_a" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c13_a" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="S">
-<div class="tft"><strong>b)</strong> \(\int f(x) d x=x^{2}+\sin x\).</div>
+<div class="tft"><strong>b)</strong> Sau khi đạp phanh, phương trình vận tốc chuyển động của xe là \(v(t)=-2 t+12(\mathrm{~m} / \mathrm{s})\), với \(t\) là thời gian tính bằng giây, kể từ lúc đạp phanh.</div>
 <div style="justify-content:center"><input name="tf_c13_b" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c13_b" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="D">
-<div class="tft"><strong>c)</strong> \(\int_{0}^{2} f(x) d x=1+\sin 2\).</div>
+<div class="tft"><strong>c)</strong> Quãng đường xe đi được từ khi phát hiện chướng ngại vật đến khi đạp phanh là 20 mét.</div>
 <div style="justify-content:center"><input name="tf_c13_c" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c13_c" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="S">
-<div class="tft"><strong>d)</strong> Nếu hàm số \(F(x)\) là một nguyên hàm của hàm số \(f(x)\) và thoả mãn \(F(0)=1\) thì \(F(1)=\dfrac{1}{4}\).</div>
+<div class="tft"><strong>d)</strong> Khi xe dừng, khoảng cách giữa xe và chướng ngại vật không quá 3 mét.</div>
 <div style="justify-content:center"><input name="tf_c13_d" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c13_d" type="radio" value="S"/></div>
 </div>
@@ -2357,12 +2355,18 @@ Vậy góc tạo bởi \((P)\) với trục \(O x\) bằng \(60^{\circ}\).
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-<br/><b>a) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Tập xác định của hàm số \(f(x)=\dfrac{x}{2}+\cos x\) là: \(D=\mathbb{R}\).
-<br/><b>b) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>\(\int f(x) d x=\int\left(\dfrac{x}{2}+\cos x\right) d x=\dfrac{x^{2}}{4}+\sin x+C\).
-<br/><b>c) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>\(\int_{0}^{2} f(x) d x=\int_{0}^{2}\left(\dfrac{x}{2}+\cos x\right) d x=\left.\left(\dfrac{x^{2}}{4}+\sin x\right)\right|_{0} ^{2}=1+\sin 2\).
-<br/><b>d) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Nếu hàm số \(F(x)\) là một nguyên hàm của hàm số \(f(x)\) và thoả mãn \(F(0)=1\) thì \(F(1)=\dfrac{1}{4}\).
-\(F(1)-F(0)=\int_{0}^{1}\left(\dfrac{x}{2}+\cos x\right) d x=\left.\left(\dfrac{x^{2}}{4}+\sin x\right)\right|_{0} ^{1}=\dfrac{1}{4}+\sin 1\)
-\(\Rightarrow F(1)=\dfrac{5}{4}+\sin 1\).
+<br/><b>a) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Vận tốc của xe kể từ khi bắt đầu đạp phanh là \(v(t)=\int(-2) \mathrm{d} t=-2 t+C\).
+Ta có \(v(0)=10 \Rightarrow-2.0+C=10 \Leftrightarrow C=10\).
+Vậy vận tốc \(v(t)=-2 t+10\).
+Xe dừng lại hẳn sau khi đạp phanh thì \(v(t)=0 \Leftrightarrow-2 t+10=0 \Leftrightarrow t=5(s)\).
+<br/><b>b) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Vậy vận tốc \(v(t)=-2 t+10\).
+<br/><b>c) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Từ lúc phát hiện chướng ngại vật đến khi đạp phanh là 2 s nên quãng đường đi được là 20 m .
+<br/><b>d) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Quãng đường xe đi được kể từ khi bắt đầu đạp phanh là \(S(t)=\int(-2 t+10) \mathrm{d} t=-t^{2}+10 t+C^{\prime}\).
+Tại thời điểm bắt đầu đạp phanh ta có \(S(0)=0 \Rightarrow C^{\prime}=0\).
+Vậy sau 5 giây thì xe đi được quãng đường là \(S(5)=-25+10.5=25 m\).
+Cách khác tính quãng đường từ khi bắt đầu đạp phanh đến khi xe ngừng hẳn: \(S(t)=\int_{0}^{5}(-2 t+10) \mathrm{d} t=25\).
+Vì khi phát hiện chướng ngại vật em học sinh còn đi thêm 2 giây mới bắt đầu đạp phanh nên sau khi mới tổng quang đường đi được từ khi bắt đầu phát hiện chướng ngại vật là \(25+20=45 \mathrm{~m}\)
+Suy ra khi xe ngừng thì xe cách chướng ngại vật \(5 m\).
 </div></div>
 </div>
 </div>
@@ -2371,26 +2375,26 @@ Vậy góc tạo bởi \((P)\) với trục \(O x\) bằng \(60^{\circ}\).
 <div class="card" data-answer="TF">
 <div class="q-badge">CÂU 2</div><div class="part-tag">PHẦN II</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong mặt phẳng \(O x y\), cho hàm số \(f(x)=a x^{3}+b x^{2}+c x+\dfrac{5}{2}(a, b, c \in \mathbb{R})\) liên tục trên \(\mathbb{R}\) và có đồ thị \((C)\) như hình vẽ bên dưới. Gọi \(A ; B\) là phần diện tích phần được gạch chéo như trong hình dưới.
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-122.jpg?height=400&width=486&top_left_y=1928&top_left_x=842" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="q-text" style="white-space: pre-wrap;">Cho hàm số \(f(x)=x^{3}-3 x^{2}+2 x\) có đồ thị như hình vẽ bên.
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-012.jpg?height=453&width=668&top_left_y=116&top_left_x=648" style="max-width:100%; border-radius:8px;"/></div></div>
 <div class="tfg"><div class="tfr"><div></div><div class="tfh">Đ</div><div class="tfh">S</div></div>
-<div class="tfr" data-tf="S">
-<div class="tft"><strong>a)</strong> Đồ thị hàm số \((C)\) cắt đường thẳng \(y=0\) tại một điểm phân biệt.</div>
+<div class="tfr" data-tf="D">
+<div class="tft"><strong>a)</strong> \(\int_{0}^{1} f^{\prime}(x) \mathrm{d} x=0\).</div>
 <div style="justify-content:center"><input name="tf_c14_a" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c14_a" type="radio" value="S"/></div>
 </div>
-<div class="tfr" data-tf="D">
-<div class="tft"><strong>b)</strong> \(A=\int_{-2}^{1} f(x) \mathrm{d} x\)</div>
+<div class="tfr" data-tf="S">
+<div class="tft"><strong>b)</strong> Gọi \(F(x)\) là một nguyên hàm của hàm số \(f(x)\), khi đó \(F(x)=\int f^{\prime}(x) \mathrm{d} x\).</div>
 <div style="justify-content:center"><input name="tf_c14_b" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c14_b" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="S">
-<div class="tft"><strong>c)</strong> \(\int_{-2}^{1} f(x) \mathrm{d} x&lt;\int_{3}^{1} f(x) \mathrm{d} x\)</div>
+<div class="tft"><strong>c)</strong> Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành và hai đường thẳng \(x=0, x=2\) là \(\int_{0}^{2} f(x) \mathrm{d} x\).</div>
 <div style="justify-content:center"><input name="tf_c14_c" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c14_c" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="D">
-<div class="tft"><strong>d)</strong> Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\); trục \(O x ; x=-2 ; x=3\) bằng \(\dfrac{1265}{144}\) (đơn vị diện tích).</div>
+<div class="tft"><strong>d)</strong> Gọi ( \(D\) ) là hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành, trục tung và đường thẳng \(x=1\). Thể tích khối tròn xoay được tạo thành khi quay ( \(D\) ) quanh trục hoành được tính theo công thức \(\pi \int_{0}^{1} f^{2}(x) \mathrm{d} x\)</div>
 <div style="justify-content:center"><input name="tf_c14_d" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c14_d" type="radio" value="S"/></div>
 </div>
@@ -2399,15 +2403,10 @@ Vậy góc tạo bởi \((P)\) với trục \(O x\) bằng \(60^{\circ}\).
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-<br/><b>a) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Dựa vào đồ thị, ta có: Đồ thị hàm số ( \(C\) ) cắt đường thẳng \(y=0\) tại ba điểm phân biệt.
-<br/><b>b) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Ta có: hàm số \(f(x) \geq 0 \forall x \in[-2 ; 1]\), nên: \(A=\int_{-2}^{1}|f(x)| \mathrm{dx}=\int_{-2}^{1} f(x) \mathrm{dx}\)
-<br/><b>c) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Ta có: hàm số \(f(x) \leq 0 \forall x \in[1 ; 3]\), nên: \(B=\int_{1}^{3}|f(x)| \mathrm{dx}=-\int_{1}^{3} f(x) \mathrm{dx}=\int_{3}^{1} f(x) \mathrm{dx}\)
-Mà từ đồ thị: \(A&gt;B \Leftrightarrow \int_{-2}^{1} f(x) \mathrm{d} x&gt;\int_{3}^{1} f(x) \mathrm{d} x\)
-<br/><b>d) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Vì các điểm \((-2 ; 0) ;(1 ; 0) ;(3 ; 0)\) thuộc đồ thị hàm số \(f(x)=a x^{3}+b x^{2}+c x+\dfrac{5}{2}\) nên ta có hệ:
-\(\left\{\begin{array}{l}-8 a+4 b-2 c+\dfrac{5}{2}=0 \\ a+b+c+\dfrac{5}{2}=0 \\ 27 a+9 b+3 c+\dfrac{5}{2}=0\end{array} \Leftrightarrow\left\{\begin{array}{l}a=\dfrac{5}{12} \\ b=-\dfrac{5}{6} \\ c=-\dfrac{25}{12}\end{array} \Rightarrow f(x)=\dfrac{5}{12} x^{3}-\dfrac{5}{6} x^{2}-\dfrac{25}{12} x+\dfrac{5}{2}\right.\right.\)
-Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\); trục \(O x ; x=-2 ; x=3\) là:
-\(S=A+B=\int_{-2}^{1} f(x) \mathrm{dx}+\int_{3}^{1} f(x) \mathrm{dx}=\int_{-2}^{1}\left(\dfrac{5}{12} x^{3}-\dfrac{5}{6} x^{2}-\dfrac{25}{12} x+\dfrac{5}{2}\right) \mathrm{dx}+\int_{3}^{1}\left(\dfrac{5}{12} x^{3}-\dfrac{5}{6} x^{2}-\dfrac{25}{12} x+\dfrac{5}{2}\right) \mathrm{dx}\)
-\(\left.\left(\dfrac{5}{48} x^{4}-\dfrac{5}{18} x^{3}-\dfrac{25}{24} x^{2}+\dfrac{5}{2} x\right)\right|_{-2} ^{1}+\left.\left(\dfrac{5}{48} x^{4}-\dfrac{5}{18} x^{3}-\dfrac{25}{24} x^{2}+\dfrac{5}{2} x\right)\right|_{3} ^{1}=\dfrac{105}{16}+\dfrac{20}{9}=\dfrac{1265}{144}\) (đơn vị diện tích).
+<br/><b>a) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Ta có: \(\int_{0}^{1} f^{\prime}(x) \mathrm{d} x=\left.f(x)\right|_{0} ^{1}=\left.\left(x^{3}-3 x^{2}+2 x\right)\right|_{0} ^{1}=0\).
+<br/><b>b) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Gọi \(F(x)\) là một nguyên hàm của hàm số \(f(x)\), khi đó \(F(x)=\int f(x) \mathrm{d} x\).
+<br/><b>c) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành và hai đường thẳng \(x=0, x=2\) là \(\int_{0}^{2}|f(x)| \mathrm{d} x\).
+<br/><b>d) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Gọi ( \(D\) ) là hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục hoành, trục tung và đường thẳng \(x=1\). Thể tích khối tròn xoay được tạo thành khi quay ( \(D\) ) quanh trục hoành được tính theo công thức \(\pi \int_{0}^{1} f^{2}(x) \mathrm{d} x\).
 </div></div>
 </div>
 </div>
@@ -2416,25 +2415,25 @@ Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\); 
 <div class="card" data-answer="TF">
 <div class="q-badge">CÂU 3</div><div class="part-tag">PHẦN II</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong một hộp đựng 5 quả cầu chứa phiếu có thưởng và 10 quả cầu chứa phiếu không có thưởng ( các quả cầu cùng hình dạng, kích thước và khối lượng). Hai bạn Bình, An lần lượt lấy ngẫu nhiên ( không hoàn lại) mỗi bạn một quả. Bạn Bình lấy trước, bạn An lấy sau.</div>
+<div class="q-text" style="white-space: pre-wrap;">Bạn Minh Hiền chọn ngẫu nhiên một bóng đèn led trên quầy. Trên quầy có hai loại đèn màu trắng và màu vàng có hình thức và kích thước như nhau. Trong đó màu trắng chiếm \(60 \%\). Bóng đèn màu trắng có tỉ lệ hỏng là \(3 \%\), bóng đèn màu vàng có tỉ lệ hỏng là \(2 \%\). Xác suất để bạn Minh Hiền chọn được</div>
 <div class="tfg"><div class="tfr"><div></div><div class="tfh">Đ</div><div class="tfh">S</div></div>
 <div class="tfr" data-tf="S">
-<div class="tft"><strong>a)</strong> Xác suất bạn Bình lấy được quả cầu chứa thưởng là \(\dfrac{1}{2}\).</div>
+<div class="tft"><strong>a)</strong> Một bóng đèn màu vàng là 0,6 .</div>
 <div style="justify-content:center"><input name="tf_c15_a" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c15_a" type="radio" value="S"/></div>
 </div>
-<div class="tfr" data-tf="D">
-<div class="tft"><strong>b)</strong> Biết bạn Bình đã lấy được quả cầu chứa phiếu có thưởng, xác suất để bạn An lấy được quả cầu chứa phiếu có thưởng là \(\dfrac{2}{7}\).</div>
+<div class="tfr" data-tf="S">
+<div class="tft"><strong>b)</strong> Một bóng đèn không hỏng, biết nó màu trắng là 0,98 .</div>
 <div style="justify-content:center"><input name="tf_c15_b" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c15_b" type="radio" value="S"/></div>
 </div>
-<div class="tfr" data-tf="D">
-<div class="tft"><strong>c)</strong> Xác suất để cả hai bạn cùng lấy được quả cầu chứa phiếu có thưởng là \(\dfrac{2}{21}\).</div>
+<div class="tfr" data-tf="S">
+<div class="tft"><strong>c)</strong> Một bóng đèn không hỏng, biết nó màu vàng là 0,97 .</div>
 <div style="justify-content:center"><input name="tf_c15_c" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c15_c" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="D">
-<div class="tft"><strong>d)</strong> Biết bạn An lấy được quả cầu chứa phiếu có thưởng, xác suất để bạn Bình lấy được quả cầu chứa phiếu có thưởng là \(\dfrac{2}{7}\).</div>
+<div class="tft"><strong>d)</strong> Một bóng đèn không hỏng là 0,974 .</div>
 <div style="justify-content:center"><input name="tf_c15_d" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c15_d" type="radio" value="S"/></div>
 </div>
@@ -2443,12 +2442,13 @@ Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\); 
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-<br/><b>a) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>B: "Bình lấy được quả cầu chứa phiếu có thưởng".
-\(n(\Omega)=15.14 ; n(B)=5.14 \Rightarrow P(B)=\dfrac{n(B)}{n(\Omega)}=\dfrac{5}{15}=\dfrac{1}{3}\).
-<br/><b>b) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>A: "An lấy được quả cầu chứa phiếu có thưởng".
-\(n(A B)=4.5 \Rightarrow P(A \mid B)=\dfrac{n(A B)}{n(B)}=\dfrac{4.5}{5.14}=\dfrac{2}{7}\).
-<br/><b>c) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>\(P(A B)=\dfrac{1}{3} \cdot \dfrac{2}{7}=\dfrac{2}{21}\).
-<br/><b>d) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>\(P(B \mid A)=\dfrac{P(A \cap B)}{P(A)}=\dfrac{P(A \cap B)}{P(B) \cdot P(A \mid B)+P(\bar{B}) \cdot P(A \mid \bar{B})}=\dfrac{\dfrac{2}{21}}{\dfrac{2}{7} \cdot \dfrac{1}{3}+\dfrac{5}{14} \cdot \dfrac{10}{15}}=\dfrac{2}{7}\)
+<br/><b>a) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Bóng màu trắng chiếm \(60 \%\) nên bóng đèn màu vàng chiếm \(40 \%\). Vậy xác suất để lấy được bóng đèn vàng là 0,4 .
+<br/><b>b) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Xét hai biến cố
+A: "lấy được bóng đèn màu trắng ".
+B: "lấy được bóng đèn không hỏng".
+Khi đó \(P(B \mid A)=1-3 \%=0,97\).
+<br/><b>c) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Ta có \(P(B \mid \bar{A})=1-2 \%=0,98\).
+<br/><b>d) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Ta có \(P(B)=P(A) \cdot P(B \mid A)+P(\bar{A}) \cdot P(B \mid \bar{A})=0,6 \cdot 0,97+0,4 \cdot 0,98=0,974\).
 </div></div>
 </div>
 </div>
@@ -2457,25 +2457,25 @@ Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\); 
 <div class="card" data-answer="TF">
 <div class="q-badge">CÂU 4</div><div class="part-tag">PHẦN II</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho đường thẳng \(d: \dfrac{x-1}{2}=\dfrac{y+2}{1}=\dfrac{z-3}{3}\) và điểm \(A(2 ; 3 ;-1)\)</div>
+<div class="q-text" style="white-space: pre-wrap;">Một đài kiểm soát không lưu tại sân bay có nhiệm vụ kiểm soát, điều hành hoạt động bay của máy bay trong vòng bán kính 70 km . Để theo dõi hành trình của máy bay, ta có thể thiết lập hệ trục toạ độ \(O x y z\) có gốc toạ độ \(O\) trùng với vị trí trung tâm của kiểm soát không lưu, mặt phẳng \((O x y)\) trùng với mặt đất (được coi là mặt phẳng) với trục \(O x\) hướng về phía tây, trục \(O y\) hướng về phía nam và trục \(O z\) hướng thẳng đứng lên trời và đơn vị độ dài trên mỗi trục tọa độ là \(1 k m\). Một máy bay trực thăng đang ở vị trí \(A(-65 ;-25 ; 30)\) bay theo hướng Tây Nam với độ cao không đổi, vận tốc không đổi \(200 k m / h\), quỹ đạo bay theo đường thẳng.</div>
 <div class="tfg"><div class="tfr"><div></div><div class="tfh">Đ</div><div class="tfh">S</div></div>
 <div class="tfr" data-tf="S">
-<div class="tft"><strong>a)</strong> Điểm \(A\) không thuộc đường thẳng \(d\).</div>
+<div class="tft"><strong>a)</strong> Khi máy bay ở vị trí \(A(-65 ;-25 ; 30)\) thì đài kiểm soát không lưu của sân bay đã theo dõi được máy bay.</div>
 <div style="justify-content:center"><input name="tf_c16_a" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c16_a" type="radio" value="S"/></div>
 </div>
-<div class="tfr" data-tf="S">
-<div class="tft"><strong>b)</strong> Mặt phẳng \((P)\) đi qua \(A\) và vuông góc \(d\) có phương trình là \(2 x+y+3 z+4=0\).</div>
+<div class="tfr" data-tf="D">
+<div class="tft"><strong>b)</strong> Máy bay di chuyển theo hướng Tây Nam với quỹ đạo bay là đường thẳng \(d\) có phương trình: \(\left\{\begin{array}{l}x=-65+t \\ y=-25+t \\ z=30\end{array}\right.\).</div>
 <div style="justify-content:center"><input name="tf_c16_b" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c16_b" type="radio" value="S"/></div>
 </div>
-<div class="tfr" data-tf="D">
-<div class="tft"><strong>c)</strong> Toạ độ giao điểm của \(d\) và \((P)\) là điểm \(K\left(\dfrac{2}{7} ;-\dfrac{33}{14} ; \dfrac{27}{14}\right)\).</div>
+<div class="tfr" data-tf="S">
+<div class="tft"><strong>c)</strong> Thời gian máy bay di chuyển trong phạm vi đài kiểm soát không lưu của sân bay theo dõi được là 35 phút.</div>
 <div style="justify-content:center"><input name="tf_c16_c" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c16_c" type="radio" value="S"/></div>
 </div>
 <div class="tfr" data-tf="D">
-<div class="tft"><strong>d)</strong> Gọi ( \(Q\) ) là mặt phẳng chứa \(d\) sao cho khoảng cách từ điểm \(A\) đến ( \(Q\) ) là lớn nhất. Khi đó mặt phẳng \((Q)\) có phương trình là \(24 x+75 y-41 z+249=0\).</div>
+<div class="tft"><strong>d)</strong> Vùng kiểm không lưu của đài kiểm soát trên là vùng ở bên trong và trên bề mặt của mặt cầu ( \(S\) ) có phương trình: \(x^{2}+y^{2}+z^{2}=4900\).</div>
 <div style="justify-content:center"><input name="tf_c16_d" type="radio" value="D"/></div>
 <div style="justify-content:center"><input name="tf_c16_d" type="radio" value="S"/></div>
 </div>
@@ -2484,20 +2484,21 @@ Diện tích hình phẳng giới hạn bởi đồ thị hàm số \(y=f(x)\); 
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-<br/><b>a) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Vì thay toạ độ điểm \(A(2 ; 3 ;-1)\) vào đường thẳng \(d\) ta thấy không thoả mãn.
-<br/><b>b) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Vì \((P) \perp d\) nên \(\vec{n}=\overrightarrow{u_{d}}=(2 ; 1 ; 3)\).
-Do đó \((P): 2 x+y+3 z-4=0\)
-<br/><b>c) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Ta có \(d:\left\{\begin{array}{l}x=1+2 t \\ y=-2+t \\ z=3+3 t\end{array}\right.\) là phương trình tham số \(d\)
-Gọi \(K=d \cap(P)\)
-Xét phương trình \((P): 2(1+2 t)+(-2+t)+3(3+3 t)-4=0\)
-\(\Rightarrow t=-\dfrac{5}{14}\) do đó \(K\left(\dfrac{2}{7} ;-\dfrac{33}{14} ; \dfrac{27}{14}\right)\)
-<br/><b>d) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Gọi \(H, M\) lần lượt là hình chiếu \(A\) lên \(d\) và \((Q)\).
-Khi đó \(A M \leq A H \Rightarrow d(A,(Q))_{\text {max }}=A H \Leftrightarrow M \equiv H\).
-Do đó \((Q)\) là mặt phẳng đi qua \(M(1 ;-2 ; 3)\) và vuông góc đường thẳng \(A H\).
-Vì \(H \in d\) nên \(H(1+2 t ;-2+t ; 3+3 t)\) và \(\overrightarrow{A H}=(-1+2 t ;-5+t ; 4+3 t)\).
-Vì \(A H \perp d\) nên \(2(-1+2 t)+1(-5+t)+3(4+3 t)=0 \Leftrightarrow t=-\dfrac{5}{14}\).
-Do đó \(\overrightarrow{A H}=\left(\dfrac{-12}{7} ;-\dfrac{75}{14} ; \dfrac{41}{14}\right)\)
-Vậy \((Q):-\dfrac{12}{7}(x-1)-\dfrac{75}{14}(y+2)+\dfrac{41}{14}(y-3)=0 \Leftrightarrow 24 x+75 y-41 z+249=0\).
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-014.jpg?height=611&width=780&top_left_y=278&top_left_x=589" style="max-width:100%; border-radius:8px;"/></div>
+<br/><b>a) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Ta có \(O A=\sqrt{(-65)^{2}+(-25)^{2}+30^{2}} \approx 75,8 \mathrm{~km}\)
+Khi máy bay ở vị trí \(A(-65 ;-25 ; 30)\) thì cách đài kiểm soát không lưu của sân bay một khoảng \(d \approx 75,8 \mathrm{~km}&gt;70 \mathrm{~km}\)
+Vậy đài kiểm soát không lưu của sân bay không theo dõi được máy bay.
+<br/><b>b) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Từ thông tin của hệ trục và máy bay di chuyển theo hướng Tây Nam với độ cao không đổi, quỹ đạo bay theo đường thẳng. Nên đường thẳng \(d\) có một vectơ chỉ phương \(\vec{u}=(1 ; 1 ; 0)\). Đường thẳng \(d\) đi qua điểm \(A(-65 ;-25 ; 30)\) nên có phương trình tham số: \(\left\{\begin{array}{l}x=-65+t \\ y=-25+t \\ z=30\end{array}\right.\)
+<br/><b>c) <span style="color:#ef4444; font-weight:900">SAI</span></b><br/>Thay \(x, y, z\) theo \(t\) vào phương trình mặt cầu ( \(S\) ) ta được phương trình:
+\((-65+t)^{2}+(-25+t)^{2}+30^{2}=4900 \Leftrightarrow 2 t^{2}-180 t+850=0 \Leftrightarrow t=5\) hoặc \(t=85\)
+Thay \(t=5\) vào phương trình của đường thẳng \(d\) ta được \(M(-60 ;-20 ; 30)\).
+Thay \(t=85\) vào phương trình của đường thẳng \(d\) ta được \(N(20 ; 60 ; 30)\).
+Suy ra đường thẳng \(d\) cắt mặt cầu ( \(S\) ) tại hai điểm \(M(-60 ;-20 ; 30)\) và \(N(20 ; 60 ; 30)\).
+Hay độ dài đoạn \(M N\) là khoảng cách giữa vị trí đầu tiên và vị trí cuối cùng mà máy bay di chuyển trong phạm vi theo dõi của đài kiểm soát không lưu.
+\(M N=\sqrt{(60+20)^{2}+(20+60)^{2}}=80 \sqrt{2} k m\)
+Thời gian máy bay di chuyển trong phạm vi đài kiểm soát không lưu của sân bay theo dõi được là thời gian máy bay di chuyển được quảng đường \(80 \sqrt{2} \mathrm{~km}\).
+Thời gian đó bằng \(\dfrac{80 \sqrt{2}}{200} \cdot 60 \approx 33,94\) phút.
+<br/><b>d) <span style="color:var(--green); font-weight:900">ĐÚNG</span></b><br/>Vùng kiểm không lưu của của đài kiểm soát trên là tập hợp những điểm cách tâm \(O(0 ; 0 ; 0)\) không quá 70 km . Hay tập hợp các điểm ở bên trong và trên bề mặt của mặt cầu ( \(S\) ) có phương trình: \(x^{2}+y^{2}+z^{2}=70^{2} \Leftrightarrow x^{2}+y^{2}+z^{2}=4900\).
 </div></div>
 </div>
 </div>
@@ -2506,56 +2507,45 @@ Vậy \((Q):-\dfrac{12}{7}(x-1)-\dfrac{75}{14}(y+2)+\dfrac{41}{14}(y-3)=0 \Leftr
 <div class="part-card"><h2>PHẦN III<br/>TRẢ LỜI NGẮN</h2></div>
 </div>
 <div class="slide" data-i="20" id="slide-20">
-<div class="card" data-answer="13.7">
+<div class="card" data-answer="42">
 <div class="q-badge">CÂU 1</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Một cái cổng hình Parabol như hình vẽ sau:
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-125.jpg?height=522&width=458&top_left_y=1356&top_left_x=758" style="max-width:100%; border-radius:8px;"/></div>
-
-Chiều cao \(G H=4 m\), chiều rộng \(A B=4 m, A C=B D=0,9 m\). Chủ nhà làm hai cánh cổng nhựa lõi thép UPVC, khi đóng lại là hình chữ nhật \(C D E F\) tô đậm có giá là 1500000 đồng \(/ \mathrm{m}^{2}\), còn các phần để trắng làm xiên hoa có giá là 1000000 đồng \(/ \mathrm{m}^{2}\). Tổng số tiền để làm hai phần nói trên là bao nhiêu triệu đồng? (kết quả làm tròn đến hàng phần chục).</div>
-<div class="short-answer" data-short-answer="13.7">
+<div class="q-text" style="white-space: pre-wrap;">Hình bên minh hoạ mặt cắt đứng của một con kênh đật trong hệ trục toạ độ \(O x y\). Đáy của con kênh là một đường cong \(A O B\) cho bởi hàm số bậc ba có dạng \(y=f(x)=a x^{3}+b x^{2}+c x+d\). Hãy tính diện tích hình phẳng tô đậm trong hình vẽ, biết đơn vị trên mỗi trục tọa độ là mét và đồ thị hàm số \(y=f(x)\) nhận gốc toạ độ \(O\) và điểm \(B\) là các điểm cực trị. Viết kết quả làm tròn đến hàng đơn vị của \(m^{2}\).
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-015.jpg?height=318&width=609&top_left_y=950&top_left_x=774" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="short-answer" data-short-answer="42">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-126.jpg?height=533&width=585&top_left_y=139&top_left_x=788" style="max-width:100%; border-radius:8px;"/></div>
-Đặt hệ trục \(O x y\) như hình vẽ.
-+ Gọi PT Parabol có dạng: \((P): y=a x^{2}+b x+c\).
-\((P)\) có đỉnh \(G(0 ; 4)\) và đi qua \(B(2 ; 0)\) suy ra: \(a=-1 ; b=0 ; c=4 \Rightarrow(P): y=-x^{2}+4\)
-+ Ta có: \(x_{E}=x_{D}=1,1 \Rightarrow y_{E}=-1,1^{2}+4=2,79 \Rightarrow E D=2,79\).
-\(+S_{\text {CDEF }}=C D \cdot D F=2,2 \cdot 2,79=6,138\left(m^{2}\right)\).
-+Diện tích hình phẳng giới hạn bởi Parabol \((P)\) và trục hoành là: \(S_{(P)}=\int_{-2}^{2}\left(-x^{2}+4\right)=\dfrac{32}{3}\left(m^{2}\right)\)
-Suy ra diện tích làm xiên hoa là: \(S=S_{(P)}-S_{C D E F}=\dfrac{6793}{1500}\left(\mathrm{~m}^{2}\right)\).
-Đổi đơn vị: 1500000 đồng \(/ m^{2}=1,5\) triệu đồng \(/ m^{2}, 1000000\) đồng \(/ m^{2}=1\) triệu đồng \(/ m^{2}\).
-Tổng số tiền để làm hai phần nói trên là: \(T=6,138 \cdot 1,5+\dfrac{6793}{1500} \cdot 1 \approx 13,7\) (triệu đồng).
-<br/><b>→ Đáp án: 13.7</b>
+Hàm số \(y=f(x)=a x^{3}+b x^{2}+c x\) mà \(f^{\prime}(0)=0 \Rightarrow c=0\)
+Mặt khác \(\left\{\begin{array}{l}f^{\prime}(10)=300 a+20 b=0 \\ f(10)=5 \Leftrightarrow 1000 a+100 b=5\end{array} \Leftrightarrow\left\{\begin{array}{l}a=\dfrac{-1}{100} \\ b=\dfrac{3}{20}\end{array}\right.\right.\)
+Do đó \(f(x)=\dfrac{-1}{100} x^{3}+\dfrac{3}{20} x^{2}=5 \Leftrightarrow\left[\begin{array}{l}x=-5 \\ x=10\end{array}\right.\)
+\(f(x)=5 \Leftrightarrow \dfrac{-1}{100} x^{3}+\dfrac{3}{20} x^{2}=5 \Leftrightarrow\left[\begin{array}{l}x=-5 \\ x=10\end{array}\right.\)
+\(\Rightarrow S=\int_{-5}^{10}[5-f(x)] d x \approx 42 m^{2}\).
+<br/><b>→ Đáp án: 42</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="21" id="slide-21">
-<div class="card" data-answer="15">
+<div class="card" data-answer="771">
 <div class="q-badge">CÂU 2</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Cho khối \(V\) có đáy là miền phẳng bị giới hạn bởi:
-- Đồ thị hàm số \(y=3 x+\dfrac{2}{x}, x&gt;0\)
-- Trục \(O x\)
-- Hai đường thẳng \(x=1\) và \(x=2\).
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-126.jpg?height=378&width=623&top_left_y=2049&top_left_x=760" style="max-width:100%; border-radius:8px;"/></div>
-
-Khi đó, mỗi tiết diện của khối \(V\) cắt bởi mặt phẳng vuông góc với trục \(O x\) đều là một tam giác đều. Hỏi thể tích của khối \(V\) bằng bao nhiêu? (làm tròn kết quả đến hàng đơn vị)</div>
-<div class="short-answer" data-short-answer="15">
+<div class="q-text" style="white-space: pre-wrap;">Một hình cầu có bán kính 6 dm , người ta cắt bỏ hai phần bằng hai mặt phẳng song song và cùng vuông góc với đường kính để làm mặt xung quanh của một chiếc lu chứa nước (như hình vẽ). Tính thể tích \(V\) (lít) mà chiếc lu chứa được, biết mặt phẳng cách tâm mặt cầu 4 dm (làm tròn đến hàng đơn vị của lít).
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-016.jpg?height=431&width=442&top_left_y=127&top_left_x=762" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="short-answer" data-short-answer="771">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Diện tích của tam giác đều là \(S(x)=\dfrac{\sqrt{3}}{4}\left(9 x^{2}+12+\dfrac{4}{x^{2}}\right)\)
-Vậy \(V=\int_{1}^{2} S(x) d x=\int_{1}^{2} \dfrac{\sqrt{3}}{4}\left(9 x^{2}+12+\dfrac{4}{x^{2}}\right) d x=\left.\dfrac{\sqrt{3}}{4}\left(3 x^{3}+12 x-\dfrac{4}{x}\right)\right|_{1} ^{2}=\dfrac{35 \sqrt{3}}{4} \approx 15\)
-<br/><b>→ Đáp án: 15</b>
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-016.jpg?height=517&width=903&top_left_y=719&top_left_x=534" style="max-width:100%; border-radius:8px;"/></div>
+Thể tích cần tìm là thể tích của khối tròn xoay khi quay hình phẳng \((H)\) giới hạn bởi đồ thị hàm số \(f(x)=\sqrt{36-x^{2}}\), trục hoành và các đường thẳng \(x=-4, x=4\) quanh trục hoành.
+Do đó: \(V=\pi \int_{-4}^{4}\left(36-x^{2}\right) d x=\dfrac{736 \pi}{3} \approx 771\) lít.
+<br/><b>→ Đáp án: 771</b>
 </div></div>
 </div>
 </div>
@@ -2574,89 +2564,86 @@ Vậy \(V=\int_{1}^{2} S(x) d x=\int_{1}^{2} \dfrac{\sqrt{3}}{4}\left(9 x^{2}+12
 <b>Lời giải:</b><br/>
 Gọi \(A\) là biến cố "Hai bạn được chọn có cùng giới tính"
 Gọi \(B\) là biến cố "Có ít nhất một bạn nam được chọn"
-Suy ra \(A B\) : "Hai bạn được chọn là nam"
+\(\Rightarrow A B\) : "Hai bạn được chọn là nam"
 Xác suất để chọn được hai bạn nam là \(P(A B)=\dfrac{C_{5}^{2}}{C_{9}^{2}}=\dfrac{5}{18}\)
-Xác suất để chọn được ít nhất 1 bạn nam \(P(B)=\dfrac{C_{5}^{1} \cdot C_{4}^{1}}{C_{9}^{2}}+\dfrac{C_{5}^{2}}{C_{9}^{2}}=\dfrac{5}{6}\) nên \(P(A \mid B)=\dfrac{P(A B)}{P(B)}=\dfrac{1}{3} \approx 0,33\).
+Xác suất để chọn được ít nhất 1 bạn nam \(P(B)=\dfrac{C_{5}^{1} \cdot C_{4}^{1}}{C_{9}^{2}}+\dfrac{C_{5}^{2}}{C_{9}^{2}}=\dfrac{5}{6}\).
+\(P(A \mid B)=\dfrac{P(A B)}{P(B)}=\dfrac{1}{3} \approx 0,33\).
 <br/><b>→ Đáp án: 0.33</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="23" id="slide-23">
-<div class="card" data-answer="37.3">
+<div class="card" data-answer="3">
 <div class="q-badge">CÂU 4</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Trong khu du lịch Vinpearl Nha Trang, người ta cho du khách trải nghiệm thiên nhiên bằng cách đu theo đường trượt zipline từ vị trí \(A\) cao 15 m của tháp 1 này sang vị trí \(B\) cao 10 m của tháp 2 trong khung cảnh tuyệt đẹp xung quanh. Với hệ trục toạ độ \(O x y z\) cho trước (đơn vị: mét), toạ độ của \(A\) và \(B\) lần lượt là \((3 ; 2,5 ; 15)\) và \((21 ; 27,5 ; 10)\). Khi du khách khi ở độ cao 12 mét thì tọa độ của du khách lúc đó là \(M(a ; b ; c)\). Tính giá trị biểu thức \(T=a+b+c\).
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-127.jpg?height=403&width=718&top_left_y=1797&top_left_x=623" style="max-width:100%; border-radius:8px;"/></div></div>
-<div class="short-answer" data-short-answer="37.3">
+<div class="q-text" style="white-space: pre-wrap;">Trong không gian \(O x y z\), cho đường thẳng \(\Delta\) có phương trình \(\left\{\begin{array}{l}x=1+2 t \\ y=-1+3 t \text {. Biết rằng điểm } \\ z=2-t\end{array}\right.\). \(M(3 ; a ; b)\) thuộc \(\Delta\). Khi đó tổng tung độ và cao độ của điểm \(M\) bằng bao nhiêu?</div>
+<div class="short-answer" data-short-answer="3">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Ta có: \(A(3 ; 2,5 ; 15), B(21 ; 27,5 ; 10) \Rightarrow \overrightarrow{A B}=(18 ; 15 ;-5)\)
-Phương trình tham số đường thẳng \(A B\) là: \(\left\{\begin{array}{l}x=3+18 t \\ y=2,5+15 t \\ z=15-5 t\end{array}(t \in \mathbb{R})\right.\).
-Vậy phương trình đường thẳng chứa đường trượt zipline là \(\left\{\begin{array}{l}x=3+18 t \\ y=2,5+15 t \\ z=15-5 t\end{array}(t \in \mathbb{R})\right.\).
-Xác định toạ độ của du khách khi ở độ cao 12 mét.
-Khi du khách khi ở độ cao 12 mét \(\Rightarrow z=12 \Rightarrow 15-5 t=12 \Rightarrow t=\dfrac{3}{5}\)
-Thay \(t=\dfrac{3}{5}\) vào phương trình đường thằng \(A B\) ta được \(\left\{\begin{array}{l}x=13,8 \\ y=11,5 \\ z=12\end{array} \Rightarrow C(13,8 ; 11,5 ; 12)\right.\)
-Vậy \(T=a+b+c=13,8+11.5+12=37,3\)
-<br/><b>→ Đáp án: 37.3</b>
+Vì điểm \(M(3 ; a ; b)\) thuộc \(\Delta\), nên ta có
+\(\left\{\begin{array}{l}3=1+2 t \\ a=-1+3 t \\ b=2-t\end{array} \Leftrightarrow\left\{\begin{array}{l}t=1 \\ a=-1+3 t \\ b=2-t\end{array} \Leftrightarrow\left\{\begin{array}{l}t=1 \\ a=2 \\ b=1\end{array} \Rightarrow M(3 ; 2 ; 1)\right.\right.\right.\).
+Vậy \(a+b=3\).
+<br/><b>→ Đáp án: 3</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="24" id="slide-24">
-<div class="card" data-answer="42">
+<div class="card" data-answer="252">
 <div class="q-badge">CÂU 5</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Hình bên dưới minh hoạ đường bay của một chiếc trực thăng \(H\) cất cánh từ một sân bay. Xét hệ trục toạ độ \(O x y z\) có gốc toạ độ \(O\) là chân tháp điều khiển của sân bay; trục \(O x\) là hướng đông \((Đ)\), trục \(O y\) là hướng bắc \((\mathrm{B})\) và trục \(O z\) là trục thẳng đứng, đơn vị trên mỗi trục là kilômét.
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-128.jpg?height=476&width=846&top_left_y=1053&top_left_x=644" style="max-width:100%; border-radius:8px;"/></div>
-
-Trực thăng cất cánh từ điểm G . Vectơ \(\vec{r}\) chỉ vị trí của trực thăng tại thời điểm \(t\) phút sau khi cất cánh \((t \geq 0)\) có toạ độ là: \(\vec{r}=(1+t ; 0,5+2 t ; 2 t)\). Tìm góc \(\theta\) mà đường bay tạo với phương ngang (làm tròn kết quả đến hàng đơn vị của độ).</div>
-<div class="short-answer" data-short-answer="42">
+<div class="q-text" style="white-space: pre-wrap;">Hình vẽ bên dưới minh hoạ một nhà kho trong không gian với hệ trục toạ độ \(O x y z\) (đơn vị trên mỗi trục là mét) và hai mái \(E F I K, H G I K\) có kích thước bằng nhau. Biết rằng chiều cao của nhà kho là \(9 m\) và các bức tường của nhà kho tạo thành hình hộp chữ nhật \(A B C D \cdot E F G H\) với \(A B=10 m, A D=24 m, A E=7 m\). Mặt phẳng \((E F I K)\) có phương trình \(a x+y+b z+c=0\). Tìm giá trị của \(a-b c\).
+<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-017.jpg?height=549&width=556&top_left_y=1411&top_left_x=808" style="max-width:100%; border-radius:8px;"/></div></div>
+<div class="short-answer" data-short-answer="252">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-Ta có góc \(\theta\) mà đường bay tạo với phương ngang chính là góc giữa đường thẳng \(G H\) và mặt phẳng (Oxy)
-Tại thời điểm \(t=0\) thì \(\overrightarrow{r_{0}}=(1 ; 0,5 ; 0)\). Trực thăng cất cánh từ điểm \(G\) nên \(G(1 ; 0,5 ; 0)\).
-Tại thời điểm . ., trực thăng bay đến vị trí \(K\) thuộc đường thẳng \(G H\) với \(K(2 ; 2,5 ; 2)\).
-Đường thẳng \(G H\) có vectơ chỉ phương \(\overrightarrow{G K}=(1 ; 2 ; 2)\) và mặt phẳng \((O x y)\) có vectơ pháp tuyến \(\vec{k}=(0 ; 0 ; 1)\)
-Ta có \(\sin (G H,(O x y))=\dfrac{|1.0+2.0+2.1|}{\sqrt{1^{2}+2^{2}+1^{2}} \sqrt{0^{2}+0^{2}+1^{2}}}=\dfrac{2}{3}\)
-Suy \(\operatorname{ra}(G H,(O x y)) \approx 42^{0}\).
-Vậy \(\theta \approx 42^{\circ}\).
-<br/><b>→ Đáp án: 42</b>
+\(A B C D\) là hình chữ nhật, \(A B=10 ; A D=12\) nên tọa độ điểm \(B(10 ; 0 ; 0) ; C(10 ; 12 ; 0)\)
+Hình chiếu của \(I\) trên mặt phẳng \((O x y)\) là trung điểm của \(B C\) nên toạ độ điểm \(I(10 ; 12 ; 9)\)
+Khi đó: \(E(0 ; 0 ; 7), F(10 ; 0 ; 7), I(10 ; 12 ; 9)\).
+Phương trình mặt phẳng \((E F I K): y-6 z+42=0\).
+Suy ra \(a-b c=252\).
+<br/><b>→ Đáp án: 252</b>
 </div></div>
 </div>
 </div>
 </div>
 <div class="slide" data-i="25" id="slide-25">
-<div class="card" data-answer="5">
+<div class="card" data-answer="240">
 <div class="q-badge">CÂU 6</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
-<div class="q-text" style="white-space: pre-wrap;">Công nghệ hỗ trợ trọng tài VAR (Video Assistant Referee) thiết lập một hệ toạ độ Oxyz để theo dõi vị trí của quả bóng \(M\). Cho biết \(M\) đang nằm trên mặt sân có phương trình \(z=0\), đồng thời thuộc mặt cầu \((\mathrm{S}):(x-22)^{2}+(y-4)^{2}+(z-13)^{2}=194\) (đơn vị độ dài tính theo mét). Gọi J là hình chiếu tâm I của mặt cầu ( S ) xuống mặt sân bóng. Khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\) bằng bao nhiêu mét?
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-129.jpg?height=451&width=611&top_left_y=676&top_left_x=680" style="max-width:100%; border-radius:8px;"/></div></div>
-<div class="short-answer" data-short-answer="5">
+<div class="q-text" style="white-space: pre-wrap;">Trong không gian với hệ trục tọa độ \(O x y z\) (với đơn vị đo trên các trục tọa độ là ki-lô-mét). Một khinh khí cầu từ vị trí điểm \(A(-16 ;-10 ; 10)\) bay thẳng đến vị trí điểm \(B(24 ; 20 ; 0)\) hết 10 giờ. Biết trạm kiểm soát không lưu đặt ở vị trí gốc toạ độ \(O\) kiểm soát được các vật thể cách trạm một khoảng tối đa bằng 12 km . Thời gian kể từ khi trạm kiểm soát không lưu phát hiện ra khinh khí cầu đến khi khinh khí cầu ra khỏi vùng kiểm soát là bao nhiêu phút?</div>
+<div class="short-answer" data-short-answer="240">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
 <button class="reveal-btn" onclick="toggleSol(this)">🔍 HIỆN LỜI GIẢI</button>
 <div class="sol-box" style="display:none"><div class="sol-inner" style="white-space: pre-wrap;">
 <b>Lời giải:</b><br/>
-<div class="img-box" style="margin-top:8px"><img src="https://cdn.mathpix.com/cropped/dba073c6-80a4-4fa7-94c0-2d5ec2578bca-129.jpg?height=266&width=623&top_left_y=1393&top_left_x=680" style="max-width:100%; border-radius:8px;"/></div>
-Mặt cầu \((S)\) có phương trình \((x-22)^{2}+(y-4)^{2}+(z-13)^{2}=194\)
-nên có tâm \(I(22 ; 4 ; 13)\) và bán kính \(R=\sqrt{194}\).
-Trong không gian Oxyz , mặt sân có phương trình \(z=0\) trùng với mặt phẳng toạ độ ( Oxy ), suy ra hình chiếu vuông góc của điểm \(I(22 ; 4 ; 13)\) xuống mặt sân có toạ độ \(J(22 ; 4 ; 0)\).
-Trong tam giác vuông IJM, ta có \(I J=13, I M=\mathrm{R}=\sqrt{194}\), suy ra
-\(
-J M=\sqrt{I M^{2}-I J^{2}}=\sqrt{194-169}=5
-\)
-Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\) là 5 m .
-<br/><b>→ Đáp án: 5</b>
+Vectơ vận tốc:
+\(\overrightarrow{A B}=(40 ; 30 ;-10) \Rightarrow \vec{v}=\dfrac{1}{10} \overrightarrow{A B}=(4 ; 3 ;-1)\).
+Phương trình đường thẳng \(A B:\left\{\begin{array}{l}x=-16+4 t \\ y=-10+3 t \\ z=10-t\end{array}\right.\)
+Phạm vi kiểm soát không lưu là khối cầu ( \(S\) ): \(x^{2}+y^{2}+z^{2}=144\).
+Giao điểm của đường khinh khí cầu bay (đường thẳng \(A B\) ) với phạm vi kiểm soát (mặt cầu ( \(S\) )) :
+\[
+\begin{aligned}
+& (-16-4 t)^{2}+(-10+3 t)^{2}+(10-t)^{2}=144 \Leftrightarrow 26 t^{2}-208 t+312=0 \\
+& \Leftrightarrow\left[\begin{array}{l}
+t=2 \\
+t=6
+\end{array} \Rightarrow M(-8 ;-4 ; 8), N(8 ; 8 ; 4) \Rightarrow \overrightarrow{M N}=(16 ; 12 ;-4)=4 \vec{v}\right.
+\end{aligned}
+\]
+Vậy thời gian khinh khí cầu bay thẳng từ \(M\) đến \(N\) là \(4 h=240^{\prime}\).
+<br/><b>→ Đáp án: 240</b>
 </div></div>
 </div>
 </div>
@@ -2675,11 +2662,11 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
 
         let cur = 0; const S = document.querySelectorAll('.slide'), N = S.length;
         const sc = document.getElementById('sc'), prog = document.getElementById('prog'), bp = document.getElementById('bp'), bn = document.getElementById('bn');
-        function show(i) { if (i < 0 || i >= N) return; S[cur].classList.remove('active'); cur = i; S[cur].classList.add('active'); sc.textContent = `${cur + 1} / ${N}`; prog.style.width = `${((cur + 1) / N) * 100}%`; bp.disabled = cur === 0; bn.disabled = cur === N - 1; var c = S[cur].querySelector('.card'); if (c) c.scrollTop = 0; if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([S[cur]]); }
+        function show(i) { if (i < 0 || i >= N) return; S[cur].classList.remove('active'); cur = i; S[cur].classList.add('active'); sc.textContent = `${cur + 1} / ${N}`; prog.style.width = `${((cur + 1) / N) * 100}%`; bp.disabled = cur === 0; bn.disabled = cur === N - 1; var c = S[cur].querySelector('.card'); if (c) c.scrollTop = 0; if (window.renderMathInElement) renderMathInElement(S[cur], {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true},{left:'$$',right:'$$',display:true}],throwOnError:false}); }
         function go(d) { show(cur + d); }
         function toggleSol(btn) {
             const box = btn.nextElementSibling;
-            if (box.style.display === 'none') { box.style.display = 'block'; btn.innerHTML = '&#128584; ẨN LỜI GIẢI'; btn.classList.add('active'); if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([box]); }
+            if (box.style.display === 'none') { box.style.display = 'block'; btn.innerHTML = '&#128584; ẨN LỜI GIẢI'; btn.classList.add('active'); if (window.renderMathInElement) renderMathInElement(box, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true},{left:'$$',right:'$$',display:true}],throwOnError:false}); }
             else { box.style.display = 'none'; btn.innerHTML = '&#128269; HIỆN LỜI GIẢI'; btn.classList.remove('active'); }
         }
         document.addEventListener('click', function (e) {
@@ -2770,10 +2757,10 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
         function closeConfirm() { document.getElementById('confirmOverlay').style.display = 'none'; }
         function collectResults() {
             const data = { ...studentInfo, exam: 'HKII_De02', p1: {}, p2: {}, p3: {} };
-            const p1Ans = ['C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
+            const p1Ans = ['A', 'A', 'A', 'B', 'D', 'D', 'B', 'C', 'B', 'B', 'C', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
-            const p3Ans = ['13.7', '15', '0.33', '37.3', '42', '5'];
+            const p3Ans = ['42', '771', '0.33', '3', '252', '240'];
             for (let i = 0; i < 6; i++) { const sl = document.querySelector(`.slide[data-i="${i + 20}"]`); if (!sl) continue; const inp = sl.querySelector('.short-input'); let val = inp ? inp.value.trim().replace(',', '.') : ''; data.p3['c' + (i + 1)] = val; const ans = p3Ans[i]; let ok = (val === ans); if (!ok) { const na = parseFloat(ans), nv = parseFloat(val); if (!isNaN(na) && !isNaN(nv) && Math.abs(na - nv) < 0.01) ok = true; } data.p3['c' + (i + 1) + '_correct'] = ok; }
             return data;
         }
@@ -2822,10 +2809,10 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
         function revealAllResults(data) {
             document.body.classList.add('submitted');
             document.querySelectorAll('.submit-btn').forEach(b => { b.disabled = true; b.style.display = 'none'; });
-            const p1Ans = ['C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
+            const p1Ans = ['A', 'A', 'A', 'B', 'D', 'D', 'B', 'C', 'B', 'B', 'C', 'A'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
-            const p3Ans = ['13.7', '15', '0.33', '37.3', '42', '5'];
+            const p3Ans = ['42', '771', '0.33', '3', '252', '240'];
             for (let i = 0; i < 6; i++) { const sl = document.querySelector(`.slide[data-i="${i + 20}"]`); if (!sl) continue; const wrap = sl.querySelector('.short-answer'); if (!wrap) continue; const input = wrap.querySelector('.short-input'); const answer = p3Ans[i]; const val = input ? input.value.trim().replace(',', '.') : ''; const ansNorm = answer.replace(',', '.'); let ok = (val === ansNorm); if (!ok) { const na = parseFloat(ansNorm), nv = parseFloat(val); if (!isNaN(na) && !isNaN(nv) && Math.abs(na - nv) < 0.01) ok = true; } if (input) input.disabled = true; const res = document.createElement('span'); res.className = 'short-result ' + (ok ? 'ok' : 'no'); if (ok) { if (input) input.classList.add('correct'); res.textContent = '✓ ĐÚNG!'; } else { if (input) input.classList.add('wrong'); res.innerHTML = '✗ Sai! Đáp án: ' + answer; } wrap.appendChild(res); }
         }
         function initProgressPanel() {
@@ -2849,8 +2836,8 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
         function convertToResultPanel(data) {
             const panel = document.getElementById('progressPanel'), fab = document.getElementById('progressFab');
             fab.innerHTML = '📊<span class="fab-badge" style="background:var(--primary-blue)">KQ</span>';
-            const p1Ans = ['C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'A', 'D', 'D', 'A'];
-            const p3Ans = ['13.7', '15', '0.33', '37.3', '42', '5'];
+            const p1Ans = ['A', 'A', 'A', 'B', 'D', 'D', 'B', 'C', 'B', 'B', 'C', 'A'];
+            const p3Ans = ['42', '771', '0.33', '3', '252', '240'];
             let p1c = '', p2c = '', p3c = '';
             for (let i = 0; i < 12; i++) { const picked = data.p1['c' + (i + 1)]; const ok = data.p1['c' + (i + 1) + '_correct']; let cls = picked ? (ok ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p1c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${i})">${i + 1}</div>`; }
             for (let i = 0; i < 4; i++) { let cnt = 0, tot = 0; for (let j = 0; j < 4; j++) { const l = String.fromCharCode(97 + j); if (data.p2['c' + (i + 1) + l]) tot++; if (data.p2['c' + (i + 1) + l + '_correct']) cnt++; } let cls = tot > 0 ? (cnt >= 3 ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p2c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${12 + i})">${i + 1}</div>`; }
@@ -2906,8 +2893,8 @@ Vậy khoảng cách từ vị trí \(M\) của quả bóng đến điểm \(J\)
             // Scroll reveal (fade-in)
             const obs = new IntersectionObserver(entries => {
                 entries.forEach(e => {
-                    if (e.isIntersecting && window.MathJax && MathJax.typesetPromise)
-                        MathJax.typesetPromise([e.target]);
+                    if (e.isIntersecting && window.renderMathInElement)
+                        renderMathInElement(e.target, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true},{left:'$$',right:'$$',display:true}],throwOnError:false});
                 });
             }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
             document.querySelectorAll('.slide').forEach(s => obs.observe(s));
