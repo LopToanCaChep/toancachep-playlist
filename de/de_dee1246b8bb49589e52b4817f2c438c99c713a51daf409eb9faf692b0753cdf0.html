@@ -2549,11 +2549,11 @@ Vậy thể tích phần không gian trong trại là \(V=\int_{-\dfrac{3}{2}}^{
 </div>
 </div>
 <div class="slide" data-i="22" id="slide-22">
-<div class="card" data-answer="0.53">
+<div class="card" data-answer="Xét các biến cố:">
 <div class="q-badge">CÂU 3</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Tại một địa phương có 500 người cao tuổi, bao gồm 260 nam và 240 nữ. Trong nhóm người cao tuổi nam và nữ lần lượt có \(40 \%\) và \(55 \%\) bị bệnh tiểu đường. Chọn ngẫu nhiên một người. Xác suất để chọn được một người không bị bệnh tiểu đường là bao nhiêu? (kết quả làm tròn đến hàng phần trăm)</div>
-<div class="short-answer" data-short-answer="0.53">
+<div class="short-answer" data-short-answer="Xét các biến cố:">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
@@ -2765,7 +2765,7 @@ Vậy khoảng cách từ điểm \(B\) đến mặt đáy bể bằng 50 cm
             const p1Ans = ['B', 'C', 'D', 'C', 'B', 'D', 'B', 'D', 'A', 'D', 'A', 'D'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
-            const p3Ans = ['623', '30', '0.53', '4', '6.9', '50'];
+            const p3Ans = ['623', '30', 'Xét các biến cố:', '4', '6.9', '50'];
             for (let i = 0; i < 6; i++) { const sl = document.querySelector(`.slide[data-i="${i + 20}"]`); if (!sl) continue; const inp = sl.querySelector('.short-input'); let val = inp ? inp.value.trim().replace(',', '.') : ''; data.p3['c' + (i + 1)] = val; const ans = p3Ans[i]; let ok = (val === ans); if (!ok) { const na = parseFloat(ans), nv = parseFloat(val); if (!isNaN(na) && !isNaN(nv) && Math.abs(na - nv) < 0.01) ok = true; } data.p3['c' + (i + 1) + '_correct'] = ok; }
             return data;
         }
@@ -2817,7 +2817,7 @@ Vậy khoảng cách từ điểm \(B\) đến mặt đáy bể bằng 50 cm
             const p1Ans = ['B', 'C', 'D', 'C', 'B', 'D', 'B', 'D', 'A', 'D', 'A', 'D'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
-            const p3Ans = ['623', '30', '0.53', '4', '6.9', '50'];
+            const p3Ans = ['623', '30', 'Xét các biến cố:', '4', '6.9', '50'];
             for (let i = 0; i < 6; i++) { const sl = document.querySelector(`.slide[data-i="${i + 20}"]`); if (!sl) continue; const wrap = sl.querySelector('.short-answer'); if (!wrap) continue; const input = wrap.querySelector('.short-input'); const answer = p3Ans[i]; const val = input ? input.value.trim().replace(',', '.') : ''; const ansNorm = answer.replace(',', '.'); let ok = (val === ansNorm); if (!ok) { const na = parseFloat(ansNorm), nv = parseFloat(val); if (!isNaN(na) && !isNaN(nv) && Math.abs(na - nv) < 0.01) ok = true; } if (input) input.disabled = true; const res = document.createElement('span'); res.className = 'short-result ' + (ok ? 'ok' : 'no'); if (ok) { if (input) input.classList.add('correct'); res.textContent = '✓ ĐÚNG!'; } else { if (input) input.classList.add('wrong'); res.innerHTML = '✗ Sai! Đáp án: ' + answer; } wrap.appendChild(res); }
         }
         function initProgressPanel() {
