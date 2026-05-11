@@ -2565,11 +2565,11 @@ Thể tích của viên gạch dạng lăng trụ lục giác đều đó là \(
 </div>
 </div>
 <div class="slide" data-i="22" id="slide-22">
-<div class="card" data-answer="2.92">
+<div class="card" data-answer="0.42">
 <div class="q-badge">CÂU 3</div><div class="part-tag">PHẦN III</div>
 <div class="q-body">
 <div class="q-text" style="white-space: pre-wrap;">Cho phương trình dao động \(x(t)=10 \cos \left(\dfrac{2 \pi}{5} t+\dfrac{\pi}{3}\right)\), ở đây li độ \(x\) tính bằng centimét và thời gian \(t\) tính bằng giây. Tìm thời điểm đầu tiên để vật có gia tốc bằng 0 . (làm tròn kết quả đến hàng phần trăm).</div>
-<div class="short-answer" data-short-answer="2.92">
+<div class="short-answer" data-short-answer="0.42">
 <input class="short-input" placeholder="Nhập đáp án..." type="text"/>
 <button class="submit-btn" onclick="checkShort(this)">📨 NỘP BÀI</button>
 </div>
@@ -2580,8 +2580,8 @@ Ta có:
 Vận tốc tức thời tại thời điểm \(t\) là \(v(t)=x^{\prime}(t)=-4 \pi \sin \left(\dfrac{2 \pi}{5} t+\dfrac{\pi}{3}\right)\).
 Gia tốc \(a(t)=x^{\prime \prime}(t)=-\dfrac{8 \pi^{2}}{5} \cos \left(\dfrac{2 \pi}{5} t+\dfrac{\pi}{3}\right)\).
 Gia tốc bằng 0 tức là \(-\dfrac{8 \pi^{2}}{5} \cos \left(\dfrac{2 \pi}{5} t+\dfrac{\pi}{3}\right)=0 \Leftrightarrow t=\dfrac{5}{12}+\dfrac{5}{2} k, k \in \mathbb{Z}\).
-Do \(t \geq 0\) nên thời điểm đầu tiên vật có gia tốc bằng 0 tương ứng với \(k=1\), tức là tại thời điểm \(t=\dfrac{5}{12}+\dfrac{5}{2}=\dfrac{35}{12}\) (giây).
-<br/><b>→ Đáp án: 2.92</b>
+Do \(t \geq 0\), với \(k=0\) ta được \(t=\dfrac{5}{12} \approx 0{,}42\) (giây) \(> 0\). Vậy thời điểm đầu tiên vật có gia tốc bằng 0 là \(t=\dfrac{5}{12}\) (giây).
+<br/><b>→ Đáp án: 0.42</b>
 </div></div>
 </div>
 </div>
@@ -2764,7 +2764,7 @@ Vậy khoảng cách từ bóng đèn đến mặt đất xấp xỉ \(1,8 m\).
             const p1Ans = ['C', 'C', 'D', 'B', 'D', 'B', 'D', 'B', 'C', 'A', 'D', 'B'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const sel = sl.querySelector('.opt.selected'); const picked = sel ? sel.dataset.key : ''; data.p1['c' + (i + 1)] = picked; data.p1['c' + (i + 1) + '_correct'] = (picked === p1Ans[i]); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach((row, j) => { const l = String.fromCharCode(97 + j); const correct = row.dataset.tf; let picked = ''; row.querySelectorAll('input[type=radio]').forEach(r => { if (r.checked) picked = r.value; }); data.p2['c' + (i + 1) + l] = picked; data.p2['c' + (i + 1) + l + '_correct'] = (picked === correct); }); }
-            const p3Ans = ['18', '4804', '2.92', '0.66', '1.8', '6'];
+            const p3Ans = ['18', '4804', '0.42', '0.66', '1.8', '6'];
             for (let i = 0; i < 6; i++) { const sl = document.querySelector(`.slide[data-i="${i + 20}"]`); if (!sl) continue; const inp = sl.querySelector('.short-input'); let val = inp ? inp.value.trim().replace(',', '.') : ''; data.p3['c' + (i + 1)] = val; const ans = p3Ans[i]; let ok = (val === ans); if (!ok) { const na = parseFloat(ans), nv = parseFloat(val); if (!isNaN(na) && !isNaN(nv) && Math.abs(na - nv) < 0.01) ok = true; } data.p3['c' + (i + 1) + '_correct'] = ok; }
             return data;
         }
@@ -2816,7 +2816,7 @@ Vậy khoảng cách từ bóng đèn đến mặt đất xấp xỉ \(1,8 m\).
             const p1Ans = ['C', 'C', 'D', 'B', 'D', 'B', 'D', 'B', 'C', 'A', 'D', 'B'];
             for (let i = 0; i < 12; i++) { const sl = document.querySelector(`.slide[data-i="${i + 2}"]`); if (!sl) continue; const card = sl.querySelector('.card'); if (!card) continue; const allOpts = card.querySelectorAll('.opt[data-key]'); const correctKey = p1Ans[i]; const sel = card.querySelector('.opt.selected'); allOpts.forEach(o => { o.classList.remove('selected'); if (o.dataset.key === correctKey) o.classList.add('correct'); else if (sel && o === sel && o.dataset.key !== correctKey) o.classList.add('wrong'); else o.classList.add('dimmed'); }); }
             for (let i = 0; i < 4; i++) { const sl = document.querySelector(`.slide[data-i="${i + 15}"]`); if (!sl) continue; sl.querySelectorAll('.tfr[data-tf]').forEach(row => { const correct = row.dataset.tf; const radios = row.querySelectorAll('input[type=radio]'); let picked = ''; radios.forEach(r => { if (r.checked) picked = r.value; r.disabled = true; }); if (picked === correct) row.classList.add('tf-correct'); else row.classList.add('tf-wrong'); }); }
-            const p3Ans = ['18', '4804', '2.92', '0.66', '1.8', '6'];
+            const p3Ans = ['18', '4804', '0.42', '0.66', '1.8', '6'];
             for (let i = 0; i < 6; i++) { const sl = document.querySelector(`.slide[data-i="${i + 20}"]`); if (!sl) continue; const wrap = sl.querySelector('.short-answer'); if (!wrap) continue; const input = wrap.querySelector('.short-input'); const answer = p3Ans[i]; const val = input ? input.value.trim().replace(',', '.') : ''; const ansNorm = answer.replace(',', '.'); let ok = (val === ansNorm); if (!ok) { const na = parseFloat(ansNorm), nv = parseFloat(val); if (!isNaN(na) && !isNaN(nv) && Math.abs(na - nv) < 0.01) ok = true; } if (input) input.disabled = true; const res = document.createElement('span'); res.className = 'short-result ' + (ok ? 'ok' : 'no'); if (ok) { if (input) input.classList.add('correct'); res.textContent = '✓ ĐÚNG!'; } else { if (input) input.classList.add('wrong'); res.innerHTML = '✗ Sai! Đáp án: ' + answer; } wrap.appendChild(res); }
         }
         function initProgressPanel() {
@@ -2841,7 +2841,7 @@ Vậy khoảng cách từ bóng đèn đến mặt đất xấp xỉ \(1,8 m\).
             const panel = document.getElementById('progressPanel'), fab = document.getElementById('progressFab');
             fab.innerHTML = '📊<span class="fab-badge" style="background:var(--primary-blue)">KQ</span>';
             const p1Ans = ['C', 'C', 'D', 'B', 'D', 'B', 'D', 'B', 'C', 'A', 'D', 'B'];
-            const p3Ans = ['18', '4804', '2.92', '0.66', '1.8', '6'];
+            const p3Ans = ['18', '4804', '0.42', '0.66', '1.8', '6'];
             let p1c = '', p2c = '', p3c = '';
             for (let i = 0; i < 12; i++) { const picked = data.p1['c' + (i + 1)]; const ok = data.p1['c' + (i + 1) + '_correct']; let cls = picked ? (ok ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p1c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${i})">${i + 1}</div>`; }
             for (let i = 0; i < 4; i++) { let cnt = 0, tot = 0; for (let j = 0; j < 4; j++) { const l = String.fromCharCode(97 + j); if (data.p2['c' + (i + 1) + l]) tot++; if (data.p2['c' + (i + 1) + l + '_correct']) cnt++; } let cls = tot > 0 ? (cnt >= 3 ? 'pg-correct' : 'pg-wrong') : 'pg-skip'; p2c += `<div class="pg-cell ${cls}" onclick="jumpToQ(${12 + i})">${i + 1}</div>`; }
